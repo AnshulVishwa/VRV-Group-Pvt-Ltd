@@ -1,0 +1,22 @@
+export const SITE_CONFIG = {
+  name: "VRV GROUP PVT. LTD.",
+  shortName: "VRV Group",
+  tagline: "Your Trust, Our Promise. We Are Here With You.",
+  subTagline: "Your trusted partner for Real Estate & Travel Services in Mathura–Vrindavan.",
+  domain: "https://vrvgroup.in",
+  cityRegion: "Mathura – Vrindavan",
+  fullAddress: "Flat No. 104, Krishna 2C, Omaxe Eternity, Vrindavan, Mathura, Uttar Pradesh – 281121",
+  phone1: "8950513077",
+  phone1Formatted: "+91 8950513077",
+  phone2: "9045090707",
+  phone2Formatted: "+91 9045090707",
+  email: "vrvgroup.pvtltd@gmail.com",
+  whatsappNumber: "918950513077",
+  whatsappMessage: "Hello VRV Group, I am interested in property options in Mathura-Vrindavan.",
+  socials: {
+    facebook: "#",
+    instagram: "#",
+    youtube: "#",
+    whatsapp: "https://wa.me/918950513077",
+  },
+};
