@@ -1,9 +1,28 @@
 import { Accessibility, Landmark, Utensils, Headphones } from 'lucide-react'
+import { BrajYatraRouteTexture, VrindavanTempleArt } from '../../common/PageTextures'
 
 export default function ExperienceSection() {
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#fbfbfe] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      {/* Ambient Halos */}
+      <div
+        className="absolute -top-20 -right-20 w-[420px] h-[420px] rounded-full pointer-events-none -z-10"
+        style={{
+          background: 'radial-gradient(circle, rgba(254, 248, 231, 0.6) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Bottom Left Sacred Braj Temple Watermark (FAQ Sister Style) */}
+      <div className="absolute bottom-0 left-0 w-[340px] sm:w-[420px] md:w-[480px] pointer-events-none -z-0 select-none opacity-65">
+        <VrindavanTempleArt className="w-full h-auto" />
+      </div>
+
+      {/* Top Right Yatra Route Trajectory */}
+      <div className="absolute top-4 right-0 w-[540px] h-[320px] pointer-events-none -z-0 select-none">
+        <BrajYatraRouteTexture className="w-full h-full" opacity={0.20} />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16">

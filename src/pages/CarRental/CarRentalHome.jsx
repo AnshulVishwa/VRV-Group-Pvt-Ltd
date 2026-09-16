@@ -1,22 +1,23 @@
 import React, { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { 
-  Car, 
-  ShieldCheck, 
-  Calendar, 
-  MapPin, 
-  CheckCircle2, 
-  Sparkles, 
-  ArrowRight, 
-  Phone, 
-  MessageCircle, 
-  Fuel, 
-  Users, 
-  Settings, 
-  Star, 
-  Clock, 
-  FileText, 
-  ChevronDown, 
+import { motion } from 'framer-motion'
+import {
+  Car,
+  ShieldCheck,
+  Calendar,
+  MapPin,
+  CheckCircle2,
+  Sparkles,
+  ArrowRight,
+  Phone,
+  MessageCircle,
+  Fuel,
+  Users,
+  Settings,
+  Star,
+  Clock,
+  FileText,
+  ChevronDown,
   X,
   Search,
   Check,
@@ -25,6 +26,7 @@ import {
 import { SITE_CONFIG } from '../../constants/siteConfig'
 import SEOHead from '../../components/common/SEOHead'
 import { CAR_FLEET, CAR_TERMS } from './data/cars'
+import { MobilityExpresswayTexture, CarRentalMobilityArt } from '../../components/common/PageTextures'
 
 export default function CarRentalHome() {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -163,55 +165,78 @@ export default function CarRentalHome() {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
       <SEOHead
         title="Self-Drive Car & Scooter Rental in Vrindavan | VRV Group"
-        description="Rent self-drive cars in Mathura & Vrindavan. Baleno, i20, Scorpio S11, Thar 4x4, Creta, Verna & Activa. Handover at Omaxe Eternity."
+        description="Rent self-drive cars in Vrindavan &. Baleno, i20, Scorpio S11, Thar 4x4, Creta, Verna & Activa. Handover at Omaxe Eternity."
       />
 
       {/* ===================== HERO SECTION ===================== */}
-      <section className="relative min-h-[85vh] flex items-center bg-[#0a1226] text-white pt-12 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        
-        {/* Background glow & subtle patterns */}
-        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-gold rounded-full blur-[120px]" />
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-600 rounded-full blur-[140px]" />
+      <section className="relative min-h-[90vh] flex flex-col justify-center bg-[#070e20] text-white pt-10 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Image with Cinematic Dark Gradient */}
+        <img
+          src="/images/car-rental/car-rental.jpg"
+          alt="Self Drive Vrindavan"
+          aria-hidden="true"
+          className="absolute inset-0 z-0 h-full w-full object-cover object-center opacity-35 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
+        />
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#070e20]/95 via-[#0b1633]/85 to-[#070e20]" />
+
+        {/* Ambient atmospheric lighting orbs */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-32 -left-32 w-96 h-96 bg-gold/20 rounded-full blur-[140px]" />
+          <div className="absolute top-1/3 -right-32 w-[30rem] h-[30rem] bg-blue-600/15 rounded-full blur-[150px]" />
+          <div className="absolute -bottom-20 left-1/3 w-80 h-80 bg-amber-500/10 rounded-full blur-[120px]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6">
-              
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider">
-                <Sparkles size={14} /> Self-Drive Vehicle Fleet &bull; Vrindavan
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+            {/* Left Column: Heading, Trust Badges & Action CTAs */}
+            <motion.div
+              initial={{ opacity: 0, x: -25 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="lg:col-span-7 space-y-6"
+            >
+
+              {/* Top Shimmering Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-gold/40 text-gold text-xs font-bold uppercase tracking-wider shadow-sm shadow-gold/10">
+                <Sparkles size={14} className="text-gold animate-pulse" />
+                <span>Self-Drive Vehicle Fleet &bull; Vrindavan</span>
               </div>
 
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
+              {/* Main Headline */}
+              <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
                 Explore Braj at Your <br />
-                <span className="text-gold">Own Peaceful Pace</span>
+                <span className="bg-gradient-to-r from-gold via-[#ffd95b] to-amber-200 bg-clip-text text-transparent">
+                  Own Peaceful Pace
+                </span>
               </h1>
 
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-                Reliable self-drive cars and Activa scooters in Mathura–Vrindavan. Clean, sanitized vehicles with handover at <strong>Omaxe Eternity</strong>.
+              {/* Description */}
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+                Reliable self-drive cars and Activa scooters in Vrindavan–Mathura. Clean, sanitized vehicles with handover at <strong className="text-white font-semibold">Omaxe Eternity</strong>.
               </p>
 
-              {/* Feature Summary Pills */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs text-slate-200 font-medium">
-                  <strong className="text-white">Standard Cars:</strong> Baleno, i20, Swift, Dzire
+              {/* Quick Trust Highlights */}
+              <div className="flex flex-wrap items-center gap-4 text-xs text-slate-300 pt-1">
+                <div className="flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 size={15} className="text-gold" />
+                  <span>100% Dedicated Self-Drive</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs text-slate-200 font-medium">
-                  <strong className="text-white">Premium SUVs:</strong> Scorpio, Thar 4x4, Creta
+                <div className="flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 size={15} className="text-gold" />
+                  <span>DL &amp; Aadhaar Verification</span>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/15 px-3.5 py-2 rounded-xl text-xs text-slate-200 font-medium">
-                  <strong className="text-white">Scooter:</strong> Honda Activa 6G / 125
+                <div className="flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 size={15} className="text-gold" />
+                  <span>Sanitized &amp; Inspected</span>
                 </div>
               </div>
 
-              {/* CTA Action Buttons */}
-              <div className="flex flex-wrap gap-4 pt-2">
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   to="/car-rental/cars"
-                  className="bg-gold hover:bg-[#e0b428] text-navy font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2 active:scale-95"
+                  className="bg-gold hover:bg-[#e0b428] text-navy font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-gold/20 hover:shadow-gold/30 transition-all flex items-center gap-2 active:scale-95"
                 >
                   <Car size={16} />
                   <span>Explore All 17+ Cars</span>
@@ -222,125 +247,154 @@ export default function CarRentalHome() {
                   href={`https://wa.me/${SITE_CONFIG.whatsappNumber}?text=Hello%20VRV%20Group%2C%20I%20want%20to%20inquire%20about%20self-drive%20car%20rental%20in%20Vrindavan.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center gap-2 active:scale-95"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-emerald-950/30 transition-all flex items-center gap-2 active:scale-95 border border-emerald-400/30"
                 >
                   <MessageCircle size={16} />
                   <span>WhatsApp Booking</span>
                 </a>
               </div>
 
-            </div>
+            </motion.div>
 
-            {/* Right Column: Fleet Options Spotlight */}
-            <div className="lg:col-span-5">
-              <div className="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-7 shadow-2xl border border-white/20 text-navy">
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            {/* Right Column: Interactive Fleet Tier Console */}
+            <motion.div
+              initial={{ opacity: 0, x: 25 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+              className="lg:col-span-5"
+            >
+              <div className="relative rounded-3xl p-6 sm:p-7 bg-[#0b1633]/90 backdrop-blur-xl border border-white/15 shadow-2xl text-white overflow-hidden">
+                {/* Decorative glow in card corner */}
+                <div className="absolute top-0 right-0 w-44 h-44 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+
+                {/* Card Header with Live Handover Badge */}
+                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
                   <div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-gold bg-navy px-2.5 py-0.5 rounded">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-gold bg-gold/15 border border-gold/30 px-2.5 py-0.5 rounded-md">
                       Available Options
                     </span>
-                    <h3 className="font-display text-lg font-bold text-navy mt-1">
+                    <h3 className="font-display text-lg sm:text-xl font-bold text-white mt-1.5">
                       Self-Drive Rental Fleet
                     </h3>
                   </div>
                   <div className="text-right">
-                    <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-400 bg-emerald-950/70 px-3 py-1 rounded-full border border-emerald-500/30">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                       Omaxe Eternity
                     </span>
                   </div>
                 </div>
 
-                <div className="space-y-2.5 text-xs">
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                {/* Category Showcase Cards */}
+                <div className="space-y-3 text-xs">
+                  {/* Standard Cars */}
+                  <div className="p-3.5 rounded-2xl bg-white/[0.06] border border-white/10 hover:border-gold/50 transition-all duration-300 flex items-center justify-between gap-3 group">
                     <div>
-                      <div className="font-bold text-navy">Standard Cars (Baleno, i20, Swift, Venue)</div>
-                      <div className="text-[11px] text-slate-500">120 KM / 200 KM / 350 KM Limit &bull; Clean &amp; Sanitized</div>
+                      <div className="font-bold text-white text-xs sm:text-sm group-hover:text-gold transition-colors">
+                        Standard Cars (Baleno, i20, Swift, Venue)
+                      </div>
+                      <div className="text-[11px] text-slate-300 mt-0.5">
+                        120 KM / 200 KM / 350 KM Limit &bull; Clean &amp; Sanitized
+                      </div>
                     </div>
-                    <div className="text-right font-extrabold text-navy text-xs bg-gold/20 text-navy px-2.5 py-1 rounded-lg">
+                    <div className="shrink-0 text-right font-bold text-gold text-xs bg-gold/15 px-2.5 py-1.5 rounded-xl border border-gold/30 whitespace-nowrap">
                       6h / 12h / 24h
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  {/* Premium SUVs */}
+                  <div className="p-3.5 rounded-2xl bg-white/[0.06] border border-white/10 hover:border-gold/50 transition-all duration-300 flex items-center justify-between gap-3 group">
                     <div>
-                      <div className="font-bold text-navy">Premium (Scorpio S11, Thar 4x4, Creta, Verna)</div>
-                      <div className="text-[11px] text-slate-500">120 KM / 200 KM / 350 KM Limit &bull; Luxury &amp; 4x4</div>
+                      <div className="font-bold text-white text-xs sm:text-sm group-hover:text-gold transition-colors">
+                        Premium (Scorpio S11, Thar 4x4, Creta, Verna)
+                      </div>
+                      <div className="text-[11px] text-slate-300 mt-0.5">
+                        120 KM / 200 KM / 350 KM Limit &bull; Luxury &amp; 4x4
+                      </div>
                     </div>
-                    <div className="text-right font-extrabold text-navy text-xs bg-gold/20 text-navy px-2.5 py-1 rounded-lg">
+                    <div className="shrink-0 text-right font-bold text-gold text-xs bg-gold/15 px-2.5 py-1.5 rounded-xl border border-gold/30 whitespace-nowrap">
                       6h / 12h / 24h
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  {/* Scooter */}
+                  <div className="p-3.5 rounded-2xl bg-white/[0.06] border border-white/10 hover:border-gold/50 transition-all duration-300 flex items-center justify-between gap-3 group">
                     <div>
-                      <div className="font-bold text-navy">Honda Activa (Two-Wheeler)</div>
-                      <div className="text-[11px] text-slate-500">Temple Darshan &bull; Narrow Lanes</div>
+                      <div className="font-bold text-white text-xs sm:text-sm group-hover:text-gold transition-colors">
+                        Honda Activa (Two-Wheeler)
+                      </div>
+                      <div className="text-[11px] text-slate-300 mt-0.5">
+                        Temple Darshan &bull; Narrow Lanes
+                      </div>
                     </div>
-                    <div className="text-right font-extrabold text-navy text-xs bg-gold/20 text-navy px-2.5 py-1 rounded-lg">
+                    <div className="shrink-0 text-right font-bold text-gold text-xs bg-gold/15 px-2.5 py-1.5 rounded-xl border border-gold/30 whitespace-nowrap">
                       6h / 12h / 24h
                     </div>
                   </div>
                 </div>
 
+                {/* Card Bottom CTA */}
                 <Link
                   to="/car-rental/cars"
-                  className="mt-4 w-full bg-navy hover:bg-[#131f40] text-gold font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 border border-gold/30"
+                  className="mt-5 w-full bg-gold hover:bg-[#e0b428] text-navy font-bold py-3 rounded-xl text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md shadow-gold/20 active:scale-95"
                 >
                   <span>View All 17 Vehicles &amp; Book</span>
                   <ArrowRight size={14} />
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
           </div>
 
-          {/* ===================== QUICK SEARCH / DURATION SELECTOR ===================== */}
-          <div className="mt-12 bg-white text-navy rounded-2xl p-6 sm:p-7 shadow-2xl border border-slate-200">
+          {/* ===================== QUICK SEARCH / DURATION SELECTOR CONSOLE ===================== */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
+            className="mt-10 lg:mt-12 bg-white text-navy rounded-3xl p-5 sm:p-7 shadow-2xl border border-slate-200/90"
+          >
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
               <div>
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
                   Pickup &amp; Handover Location:
                 </span>
-                <div className="text-sm font-extrabold text-navy flex items-center gap-1.5 mt-0.5">
-                  <MapPin size={15} className="text-gold shrink-0" />
-                  Flat No. 104, Krishna 2C, Omaxe Eternity, Vrindavan (281121)
+                <div className="text-sm sm:text-base font-extrabold text-navy flex items-center gap-2 mt-1">
+                  <MapPin size={16} className="text-gold shrink-0" />
+                  <span>Flat No. 104, Krishna 2C, Omaxe Eternity, Vrindavan (281121)</span>
                 </div>
               </div>
 
               {/* Duration Switcher */}
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2.5">
                 <span className="text-xs font-bold text-slate-500">Rental Duration:</span>
                 <div className="inline-flex rounded-xl bg-slate-100 p-1 border border-slate-200">
                   <button
                     type="button"
                     onClick={() => setSelectedDuration('6h')}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                      selectedDuration === '6h'
-                        ? 'bg-navy text-gold shadow-sm'
-                        : 'text-slate-600 hover:text-navy'
-                    }`}
+                    className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${selectedDuration === '6h'
+                      ? 'bg-navy text-gold shadow-sm'
+                      : 'text-slate-600 hover:text-navy'
+                      }`}
                   >
                     6 Hours (120 KM)
                   </button>
                   <button
                     type="button"
                     onClick={() => setSelectedDuration('12h')}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                      selectedDuration === '12h'
-                        ? 'bg-navy text-gold shadow-sm'
-                        : 'text-slate-600 hover:text-navy'
-                    }`}
+                    className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${selectedDuration === '12h'
+                      ? 'bg-navy text-gold shadow-sm'
+                      : 'text-slate-600 hover:text-navy'
+                      }`}
                   >
                     12 Hours (200 KM)
                   </button>
                   <button
                     type="button"
                     onClick={() => setSelectedDuration('24h')}
-                    className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                      selectedDuration === '24h'
-                        ? 'bg-navy text-gold shadow-sm'
-                        : 'text-slate-600 hover:text-navy'
-                    }`}
+                    className={`px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${selectedDuration === '24h'
+                      ? 'bg-navy text-gold shadow-sm'
+                      : 'text-slate-600 hover:text-navy'
+                      }`}
                   >
                     24 Hours (350 KM)
                   </button>
@@ -350,13 +404,13 @@ export default function CarRentalHome() {
 
             <form onSubmit={(e) => { e.preventDefault(); const el = document.getElementById('fleet'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end mt-4">
               <div>
-                <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">
                   Pickup Point
                 </label>
-                <select 
-                  value={pickupLoc} 
+                <select
+                  value={pickupLoc}
                   onChange={(e) => setPickupLoc(e.target.value)}
-                  className="w-full h-11 bg-slate-50 border border-slate-200 rounded-xl px-3 text-xs font-semibold text-navy focus:outline-none focus:ring-1 focus:ring-gold"
+                  className="w-full h-11 bg-slate-50 border border-slate-200 rounded-xl px-3 text-xs font-semibold text-navy focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
                 >
                   <option value="Flat No. 104, Krishna 2C, Omaxe Eternity, Vrindavan">
                     Flat 104, Krishna 2C, Omaxe Eternity (Main Office)
@@ -368,51 +422,66 @@ export default function CarRentalHome() {
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">
                   Rental Date
                 </label>
-                <input 
-                  type="date" 
+                <input
+                  type="date"
                   value={startDate}
                   min={todayStr}
                   onChange={(e) => setStartDate(e.target.value)}
-                  className="w-full h-11 bg-slate-50 border border-slate-200 rounded-xl px-3 text-xs font-semibold text-navy focus:outline-none focus:ring-1 focus:ring-gold"
+                  className="w-full h-11 bg-slate-50 border border-slate-200 rounded-xl px-3 text-xs font-semibold text-navy focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">
                   End Date ({rentalDays} Day{rentalDays > 1 ? 's' : ''})
                 </label>
-                <input 
-                  type="date" 
+                <input
+                  type="date"
                   value={endDate}
                   min={startDate || todayStr}
                   onChange={(e) => setEndDate(e.target.value)}
-                  className="w-full h-11 bg-slate-50 border border-slate-200 rounded-xl px-3 text-xs font-semibold text-navy focus:outline-none focus:ring-1 focus:ring-gold"
+                  className="w-full h-11 bg-slate-50 border border-slate-200 rounded-xl px-3 text-xs font-semibold text-navy focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
                 />
               </div>
 
               <div>
-                <Link 
+                <Link
                   to="/car-rental/cars"
-                  className="w-full h-11 bg-navy hover:bg-gold hover:text-navy text-gold font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer border border-gold/30"
+                  className="w-full h-11 bg-navy hover:bg-gold hover:text-navy text-gold font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer border border-gold/30 active:scale-95"
                 >
                   <Search size={15} />
                   <span>Browse Available Fleet</span>
                 </Link>
               </div>
             </form>
-          </div>
+          </motion.div>
 
         </div>
       </section>
 
       {/* ===================== VALUE PROPS / ADVANTAGES ===================== */}
-      <section className="py-16 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 bg-[#FAFCFF] border-b border-slate-200 overflow-hidden">
+        {/* Modern Highway Mobility Texture */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+          <div
+            className="absolute -top-20 -right-20 w-[460px] h-[460px] rounded-full"
+            style={{
+              background: 'radial-gradient(circle, rgba(254, 248, 231, 0.6) 0%, transparent 70%)',
+            }}
+          />
+        </div>
+
+        {/* Bottom-Left Car Rental Mobility Line-Art Watermark (FAQ Sister Style) */}
+        <div className="absolute bottom-0 left-0 w-[340px] sm:w-[420px] md:w-[480px] pointer-events-none select-none opacity-65">
+          <CarRentalMobilityArt className="w-full h-auto" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
+
             <div className="p-6 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:border-gold shadow-sm hover:shadow-xl transition-all duration-300 group">
               <div className="w-12 h-12 rounded-xl bg-gold/15 text-gold-dark flex items-center justify-center font-bold text-xl mb-4 group-hover:bg-gold group-hover:text-white transition-colors">
                 <Car size={22} />
@@ -459,7 +528,7 @@ export default function CarRentalHome() {
 
       {/* ===================== FEATURED FLEET HIGHLIGHT ===================== */}
       <section id="fleet" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-200">
-        
+
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <span className="eyebrow inline-block mb-2 font-bold text-xs uppercase tracking-widest text-gold border-b-2 border-gold pb-1">
@@ -503,7 +572,7 @@ export default function CarRentalHome() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    
+
                     <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
                       <span className="px-2.5 py-1 rounded-lg bg-navy/90 text-gold text-[10px] font-extrabold uppercase tracking-wider backdrop-blur-md border border-gold/30">
                         {car.categoryBadge}
@@ -734,7 +803,7 @@ export default function CarRentalHome() {
       {/* ===================== HOW IT WORKS (NO DEPOSIT STEP) ===================== */}
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="eyebrow inline-block mb-2 font-bold text-xs uppercase tracking-widest text-gold border-b-2 border-gold pb-1">
               EFFORTLESS PROCESS
@@ -748,7 +817,7 @@ export default function CarRentalHome() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            
+
             <div className="bg-slate-50/70 rounded-3xl p-7 border border-slate-200 text-center shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
               <div className="w-14 h-14 mx-auto rounded-2xl bg-navy text-gold flex items-center justify-center font-display text-2xl font-bold shadow-md ring-2 ring-gold/40 mb-5">
                 1
@@ -788,43 +857,245 @@ export default function CarRentalHome() {
       </section>
 
       {/* ===================== FAQ SECTION (Inactive by default) ===================== */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center mb-12">
-            <span className="eyebrow inline-block mb-2 font-bold text-xs uppercase tracking-widest text-gold">
-              FAQ
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy tracking-tight">
-              Frequently Asked Questions
-            </h2>
+      <section className="relative py-24 bg-gradient-to-b from-[#FFFFFF] via-[#FAFBFC] to-[#F5F7FA] border-b border-slate-200 overflow-hidden">
+        {/* Ambient atmospheric lighting orbs */}
+        <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-[#D8C98A]/1 blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#1B2A55]/15 blur-3xl pointer-events-none translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-amber-50/15 blur-3xl pointer-events-none" />
+
+        {/* SVG Blueprint Grid / Road Mesh Pattern */}
+        <svg className="absolute inset-0 w-full h-full opacity-45 pointer-events-none select-none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="car-faq-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+              <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#1B2A55" strokeWidth="0.6" strokeOpacity="0.09" />
+              <circle cx="22" cy="22" r="1.3" fill="#C9A227" fillOpacity="0.4" />
+              <circle cx="0" cy="0" r="2" fill="#1B2A55" fillOpacity="0.2" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#car-faq-grid)" />
+        </svg>
+
+        {/* FULL SECTION BACKGROUND SVG: Big Visible Highway Map & Car Contour Backdrop (Visible on ALL screens!) */}
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden flex items-center justify-between">
+          {/* Left Side Big SVG: Highway Ribbon, Waypoint Pins, and Compass Dial */}
+          <div className="w-[340px] md:w-[420px] lg:w-[480px] h-[650px] -ml-16 md:-ml-10 lg:ml-0 opacity-80 md:opacity-90 transition-opacity">
+            <svg viewBox="0 0 400 650" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+              {/* Compass Dial */}
+              <g transform="translate(100, 80)">
+                <circle cx="0" cy="0" r="54" stroke="#1B2A55" strokeWidth="1.5" strokeOpacity="0.25" strokeDasharray="4 4" />
+                <circle cx="0" cy="0" r="44" stroke="#C9A227" strokeWidth="2" strokeOpacity="0.6" />
+                <circle cx="0" cy="0" r="5" fill="#C9A227" />
+                <path d="M0 -38 L7 -7 L0 0 L-7 -7 Z" fill="#1B2A55" />
+                <path d="M0 38 L6 7 L0 0 L-6 7 Z" fill="#C9A227" />
+                <text x="0" y="-42" textAnchor="middle" fill="#1B2A55" fontSize="11" fontWeight="bold">N</text>
+                <text x="42" y="4" textAnchor="middle" fill="#C9A227" fontSize="10" fontWeight="bold">E</text>
+                <text x="0" y="52" textAnchor="middle" fill="#1B2A55" fontSize="10" fontWeight="bold">S</text>
+                <text x="-42" y="4" textAnchor="middle" fill="#C9A227" fontSize="10" fontWeight="bold">W</text>
+              </g>
+
+              {/* Highway Road with Center Dashed Gold Line */}
+              <path
+                d="M100 140 C 100 230, 40 260, 40 340 C 40 430, 160 470, 160 560 C 160 610, 120 635, 100 650"
+                stroke="#1B2A55"
+                strokeWidth="32"
+                strokeLinecap="round"
+                strokeOpacity="0.07"
+              />
+              <path
+                d="M100 140 C 100 230, 40 260, 40 340 C 40 430, 160 470, 160 560 C 160 610, 120 635, 100 650"
+                stroke="#1B2A55"
+                strokeWidth="2"
+                strokeOpacity="0.3"
+              />
+              <path
+                d="M100 140 C 100 230, 40 260, 40 340 C 40 430, 160 470, 160 560 C 160 610, 120 635, 100 650"
+                stroke="#C9A227"
+                strokeWidth="3"
+                strokeDasharray="8 10"
+                strokeOpacity="0.9"
+              />
+
+              {/* Waypoint 1: Vrindavan Base */}
+              <g transform="translate(98, 190)">
+                <circle cx="0" cy="0" r="16" fill="#C9A227" fillOpacity="0.2" />
+                <circle cx="0" cy="0" r="8" fill="#FFFFFF" stroke="#C9A227" strokeWidth="3" />
+                <circle cx="0" cy="0" r="3" fill="#1B2A55" />
+                <rect x="18" y="-12" width="124" height="24" rx="12" fill="#FFFFFF" stroke="#C9A227" strokeWidth="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.06))" />
+                <text x="30" y="4" fill="#1B2A55" fontSize="10.5" fontWeight="bold">Vrindavan Base</text>
+              </g>
+
+              {/* Waypoint 2: Mathura Trail */}
+              <g transform="translate(40, 340)">
+                <circle cx="0" cy="0" r="14" fill="#1B2A55" fillOpacity="0.15" />
+                <circle cx="0" cy="0" r="7" fill="#FFFFFF" stroke="#1B2A55" strokeWidth="2.5" />
+                <circle cx="0" cy="0" r="2.5" fill="#C9A227" />
+                <rect x="16" y="-11" width="112" height="22" rx="11" fill="#FFFFFF" stroke="#1B2A55" strokeOpacity="0.4" strokeWidth="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.06))" />
+                <text x="26" y="4" fill="#1B2A55" fontSize="10" fontWeight="bold">Mathura Trail</text>
+              </g>
+
+              {/* Waypoint 3: Govardhan Loop */}
+              <g transform="translate(160, 520)">
+                <circle cx="0" cy="0" r="16" fill="#C9A227" fillOpacity="0.2" />
+                <circle cx="0" cy="0" r="8" fill="#FFFFFF" stroke="#C9A227" strokeWidth="3" />
+                <circle cx="0" cy="0" r="3" fill="#C9A227" />
+                <rect x="18" y="-12" width="126" height="24" rx="12" fill="#FFFFFF" stroke="#C9A227" strokeWidth="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.06))" />
+                <text x="30" y="4" fill="#1B2A55" fontSize="10.5" fontWeight="bold">Govardhan Loop</text>
+              </g>
+
+              {/* 24/7 Road Assistance Badge */}
+              <g transform="translate(60, 600)">
+                <rect x="0" y="0" width="150" height="30" rx="8" fill="#1B2A55" fillOpacity="0.1" stroke="#C9A227" strokeWidth="1" />
+                <text x="14" y="20" fill="#1B2A55" fontSize="10.5" fontWeight="bold" letterSpacing="0.5">24/7 Road Assistance</text>
+              </g>
+            </svg>
           </div>
 
-          <div className="space-y-3">
+          {/* Right Side Big SVG: Luxury Car Silhouette, Speedometer Arc & Wheel Motif */}
+          <div className="w-[340px] md:w-[420px] lg:w-[480px] h-[650px] -mr-16 md:-mr-10 lg:mr-0 opacity-80 md:opacity-90 transition-opacity">
+            <svg viewBox="0 0 400 650" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+              {/* Speedometer Gauge at Upper Right */}
+              <g transform="translate(280, 110)">
+                <path d="M -70 24 A 75 75 0 1 1 70 24" stroke="#1B2A55" strokeWidth="3" strokeOpacity="0.2" strokeLinecap="round" />
+                <path d="M -60 16 A 65 65 0 1 1 40 -50" stroke="#C9A227" strokeWidth="5" strokeLinecap="round" />
+                {[-120, -90, -60, -30, 0, 30, 60, 90, 120].map((deg, i) => {
+                  const rad = (deg * Math.PI) / 180
+                  const x1 = Math.sin(rad) * 52
+                  const y1 = -Math.cos(rad) * 52
+                  const x2 = Math.sin(rad) * (i % 2 === 0 ? 42 : 47)
+                  const y2 = -Math.cos(rad) * (i % 2 === 0 ? 42 : 47)
+                  return (
+                    <line
+                      key={i}
+                      x1={x1}
+                      y1={y1}
+                      x2={x2}
+                      y2={y2}
+                      stroke={i > 5 ? "#C9A227" : "#1B2A55"}
+                      strokeWidth={i % 2 === 0 ? 2 : 1}
+                      strokeOpacity={i > 5 ? 0.95 : 0.4}
+                    />
+                  )
+                })}
+                <line x1="0" y1="0" x2="34" y2="-34" stroke="#C9A227" strokeWidth="3" strokeLinecap="round" />
+                <circle cx="0" cy="0" r="6" fill="#1B2A55" />
+                <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+                <text x="0" y="26" textAnchor="middle" fill="#1B2A55" fontSize="10.5" fontWeight="bold" letterSpacing="0.5">UNLIMITED KM</text>
+                <text x="0" y="40" textAnchor="middle" fill="#C9A227" fontSize="8.5" fontWeight="bold" letterSpacing="1">SELF DRIVE</text>
+              </g>
+
+              {/* Sleek Aerodynamic Car Silhouette Contours */}
+              <g transform="translate(60, 240)">
+                <path
+                  d="M 20 140 C 60 138, 100 135, 130 110 C 160 85, 200 82, 240 85 C 270 87, 290 110, 310 120"
+                  stroke="#1B2A55"
+                  strokeWidth="3.5"
+                  strokeOpacity="0.45"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M 5 155 C 50 152, 95 153, 140 148 C 190 143, 240 145, 300 150"
+                  stroke="#C9A227"
+                  strokeWidth="3"
+                  strokeOpacity="0.8"
+                  strokeLinecap="round"
+                />
+                <path d="M 60 160 A 24 24 0 0 1 108 160" stroke="#1B2A55" strokeWidth="3" strokeOpacity="0.5" />
+                <path d="M 220 160 A 24 24 0 0 1 268 160" stroke="#C9A227" strokeWidth="3.5" strokeOpacity="0.8" />
+                <path d="M 0 115 Q 110 112 180 98" stroke="#C9A227" strokeWidth="1.5" strokeOpacity="0.4" strokeDasharray="6 6" />
+                <path d="M 30 175 Q 160 173 290 175" stroke="#1B2A55" strokeWidth="1.5" strokeOpacity="0.2" />
+              </g>
+
+              {/* Precision Alloy Wheel Motif */}
+              <g transform="translate(260, 480)">
+                <circle cx="0" cy="0" r="56" stroke="#1B2A55" strokeWidth="2" strokeOpacity="0.2" />
+                <circle cx="0" cy="0" r="48" stroke="#C9A227" strokeWidth="2" strokeOpacity="0.5" strokeDasharray="8 5" />
+                <circle cx="0" cy="0" r="35" stroke="#1B2A55" strokeWidth="1" strokeOpacity="0.25" />
+                <circle cx="0" cy="0" r="18" fill="#1B2A55" fillOpacity="0.08" stroke="#C9A227" strokeWidth="2.5" />
+                <circle cx="0" cy="0" r="6" fill="#C9A227" />
+                {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+                  <line
+                    key={deg}
+                    x1={Math.sin((deg * Math.PI) / 180) * 18}
+                    y1={-Math.cos((deg * Math.PI) / 180) * 18}
+                    x2={Math.sin((deg * Math.PI) / 180) * 48}
+                    y2={-Math.cos((deg * Math.PI) / 180) * 48}
+                    stroke="#1B2A55"
+                    strokeWidth="1.5"
+                    strokeOpacity="0.3"
+                  />
+                ))}
+                <rect x="-75" y="68" width="150" height="28" rx="14" fill="#FFFFFF" stroke="#C9A227" strokeWidth="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.06))" />
+                <text x="0" y="86" textAnchor="middle" fill="#1B2A55" fontSize="10" fontWeight="bold" letterSpacing="0.8">100% SANITIZED FLEET</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        {/* Content Container */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div className="text-center mb-10">
+
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1B2A55] tracking-tight">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-sans leading-relaxed">
+              Everything you need to know about self-drive rentals, security deposits, pickup points, and driving freedom in Vrindavan.
+            </p>
+
+            {/* Central Decorative SVG Car & Highway Trail Banner (Always visible in center!) */}
+            <div className="mt-6 flex justify-center items-center">
+              <svg viewBox="0 0 500 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-md h-12">
+                <line x1="10" y1="25" x2="190" y2="25" stroke="#C9A227" strokeWidth="2" strokeDasharray="6 4" strokeOpacity="0.7" />
+                <circle cx="60" cy="25" r="4" fill="#C9A227" />
+                <circle cx="130" cy="25" r="4" fill="#1B2A55" />
+                {/* Center Stylized Car Emblem */}
+                <g transform="translate(250, 25)">
+                  <rect x="-35" y="-14" width="70" height="28" rx="14" fill="#FFFFFF" stroke="#C9A227" strokeWidth="1.5" filter="drop-shadow(0 2px 5px rgba(27,42,85,0.08))" />
+                  <path d="M -18 4 L -12 -6 L 12 -6 L 18 4 Z" fill="none" stroke="#1B2A55" strokeWidth="1.5" strokeLinejoin="round" />
+                  <circle cx="-10" cy="4" r="3" fill="#C9A227" />
+                  <circle cx="10" cy="4" r="3" fill="#C9A227" />
+                  <line x1="-20" y1="4" x2="20" y2="4" stroke="#1B2A55" strokeWidth="1.5" />
+                </g>
+                <line x1="310" y1="25" x2="490" y2="25" stroke="#C9A227" strokeWidth="2" strokeDasharray="6 4" strokeOpacity="0.7" />
+                <circle cx="370" cy="25" r="4" fill="#1B2A55" />
+                <circle cx="440" cy="25" r="4" fill="#C9A227" />
+              </svg>
+            </div>
+          </div>
+
+          <div className="space-y-3.5">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx
               return (
                 <div
                   key={idx}
-                  className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                    isOpen ? 'border-gold/60 shadow-md bg-white' : 'border-slate-200 bg-white hover:border-slate-300'
-                  }`}
+                  className={`relative rounded-2xl overflow-hidden transition-all duration-300 ${isOpen
+                    ? 'border-2 border-[#C9A227] shadow-luxury bg-white'
+                    : 'border border-slate-200/90 bg-white/95 backdrop-blur-md hover:border-[#C9A227]/60 hover:bg-white shadow-[0_2px_12px_-2px_rgba(27,42,85,0.06)] hover:shadow-card'
+                    }`}
                 >
+                  {/* Active Indicator Accent Bar */}
+                  {isOpen && (
+                    <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#C9A227] via-[#E1D6A8] to-[#B8A96A]" />
+                  )}
+
                   <button
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between gap-4 text-left px-6 py-5 text-navy hover:text-gold-dark transition-colors cursor-pointer"
+                    className="w-full flex items-center justify-between gap-4 text-left px-6 py-5 text-[#1B2A55] hover:text-[#B8A96A] transition-colors cursor-pointer"
                   >
-                    <span className="font-bold text-sm sm:text-base leading-snug">{faq.q}</span>
-                    <div className={`p-1.5 rounded-full bg-slate-100 text-navy transition-transform duration-300 shrink-0 ${
-                      isOpen ? 'rotate-180 bg-gold text-white' : ''
-                    }`}>
+                    <span className={`font-bold text-sm sm:text-base leading-snug ${isOpen ? 'text-[#1B2A55] pl-1' : ''}`}>
+                      {faq.q}
+                    </span>
+                    <div className={`p-1.5 rounded-full transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-[#C9A227] text-white shadow-md' : 'bg-slate-100 text-[#1B2A55] hover:bg-[#C9A227]/20'
+                      }`}>
                       <ChevronDown size={18} />
                     </div>
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 font-sans">
+                    <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 font-sans pl-7">
                       {faq.a}
                     </div>
                   )}
@@ -833,8 +1104,43 @@ export default function CarRentalHome() {
             })}
           </div>
 
+          {/* Direct Assistance Support Card - Solid inline gradient for guaranteed contrast */}
+          <div
+            style={{ background: 'linear-gradient(135deg, #111A35 0%, #1B2A55 50%, #263A70 100%)' }}
+            className="mt-10 p-5 sm:p-6 rounded-2xl text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5 border border-[#C9A227]/30"
+          >
+            <div className="flex items-center gap-3.5 text-center sm:text-left">
+              <div className="p-3 rounded-xl bg-[#C9A227]/20 text-[#C9A227] border border-[#C9A227]/30 shrink-0">
+                <MessageCircle size={22} />
+              </div>
+              <div>
+                <div className="font-bold text-sm sm:text-base text-white">Have a specific question not covered here?</div>
+                <div className="text-xs text-slate-300 mt-0.5">Our reservation desk at Omaxe Eternity, Vrindavan is ready to assist you anytime.</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto justify-center">
+              <a
+                href={`https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent("Hello VRV Group, I have a question regarding Car Rental.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+              >
+                <MessageCircle size={15} />
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href={`tel:${SITE_CONFIG.phone1}`}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C9A227] hover:bg-[#B8A96A] text-white text-xs font-bold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+              >
+                <Phone size={15} />
+                <span>Call Desk</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       </section>
+
 
       {/* ===================== DIRECT BOOKING CTA DESK ===================== */}
       <section className="py-16 bg-navy text-white text-center">

@@ -12,6 +12,7 @@ import { filterPropertyList, PROPERTY_TYPES } from "../../utils/filterHelpers";
 import { SITE_CONFIG } from "../../constants/siteConfig";
 import { useLiked } from "../../context/LikedContext";
 import PropertyInquiryForm from "../../components/property/PropertyInquiryForm";
+import { ArchitecturalCadastreTexture, RealEstateArchitectureArt } from "../../components/common/PageTextures";
 
 const EMPTY_FILTERS = {
   location: "",
@@ -155,49 +156,60 @@ export default function PropertiesPage() {
   };
 
   const whatsappUrl = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-    "Hello VRV Group, I am looking for property in Mathura-Vrindavan. Please assist me with available options."
+    "Hello VRV Group, I am looking for property in Vrindavan-Mathura. Please assist me with available options."
   )}`;
 
   return (
-    <div className="min-h-screen bg-[#F5F5F3] pb-16 font-sans text-body">
+    <div className="min-h-screen bg-[#F5F5F3] pb-16 font-sans text-body relative overflow-hidden">
       <SEOHead
-        title={tab === "Liked Properties" ? "Saved Liked Properties" : "Real Estate Mathura–Vrindavan"}
-        description={`Explore verified plots, flats, apartments, and villas in Mathura and Vrindavan with ${SITE_CONFIG.name}.`}
+        title={tab === "Liked Properties" ? "Saved Liked Properties" : "Real Estate Vrindavan–Mathura"}
+        description={`Explore verified plots, flats, apartments, and villas in Vrindavan and Mathura and  with ${SITE_CONFIG.name}.`}
       />
 
       {/* Hero Banner with Search */}
-      <section className="relative bg-navy py-8 sm:py-12 lg:py-14 text-white overflow-hidden shadow-md">
-        <div 
-          className="absolute inset-0 z-0 opacity-20 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/services/real-estate.png')" }}
+      <section className="relative bg-navy py-10 sm:py-14 lg:py-16 text-white overflow-hidden shadow-md">
+        {/* Cinematic Real Estate Hero Image */}
+        <img
+          src="/images/hero/real-estate-hero.jpg"
+          alt="Verified Properties in Vrindavan"
+          className="absolute inset-0 z-0 h-full w-full object-cover object-center opacity-45 scale-105 transform motion-safe:transition-transform motion-safe:duration-1000"
         />
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0a142c]/90 via-navy/95 to-navy" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#070e20]/95 via-[#0b1633]/85 to-[#070e20]/90" />
+        <div className="absolute inset-0 z-0 bg-radial-gradient from-transparent via-[#070e20]/30 to-[#070e20]/95 pointer-events-none" />
 
-        <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-[4.5%]">
+        {/* Ambient atmospheric glow orbs */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute -bottom-20 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+        {/* Subtle Architectural Blueprint Cadastre Texture */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <ArchitecturalCadastreTexture className="absolute -top-10 -right-10 w-[700px] h-[380px]" opacity={0.12} />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1720px] px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
           {/* Breadcrumb & Headings */}
           <div className="max-w-3xl">
-            <div className="text-xs font-medium text-white/80">Home <span className="px-1.5">›</span> Properties</div>
-            <h1 className="mt-2 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+            <div className="text-xs xl:text-sm font-medium text-white/80">Home <span className="px-1.5">›</span> Properties</div>
+            <h1 className="mt-2 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl">
               {tab === "Liked Properties" ? "Your Liked Properties" : "Real Estate Listings"}
             </h1>
-            <div className="my-2.5 h-1 w-14 rounded-full bg-gold" />
-            <p className="text-xs sm:text-sm leading-relaxed text-white/90">
+            <div className="my-2.5 h-1 w-14 xl:w-20 rounded-full bg-gold" />
+            <p className="text-xs sm:text-sm xl:text-base leading-relaxed text-white/90">
               Find verified residential flats, studios, plots, and villas in <b className="text-gold">{SITE_CONFIG.cityRegion}</b>.
               Buy or Rent with full transparency and direct local guidance.
             </p>
           </div>
 
           {/* Unified Search Card */}
-          <div className="mt-6 w-full rounded-2xl bg-white/95 p-4 shadow-2xl backdrop-blur-md border border-white/20 sm:p-5">
+          <div className="mt-6 w-full rounded-2xl bg-white/95 p-4 xl:p-6 shadow-2xl backdrop-blur-md border border-white/20 sm:p-5">
             {/* All Properties / Buy / Rent Tabs */}
             <div className="mb-4 flex max-w-md overflow-hidden rounded-xl bg-slate-100 p-1">
               {["All Properties", "Buy", "Rent"].map((item) => (
                 <button
                   key={item}
                   onClick={() => handleTabChange(item)}
-                  className={`h-9 flex-1 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1 cursor-pointer ${
-                    tab === item ? "bg-gold text-[#13264f] shadow-sm" : "text-navy hover:text-gold"
-                  }`}
+                  className={`h-9 xl:h-10 flex-1 rounded-lg text-xs xl:text-sm font-bold transition-all flex items-center justify-center gap-1 cursor-pointer ${tab === item ? "bg-gold text-[#13264f] shadow-sm" : "text-navy hover:text-gold"
+                    }`}
                 >
                   {item}
                 </button>
@@ -206,21 +218,21 @@ export default function PropertiesPage() {
 
             {/* Inputs Grid */}
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-[1.5fr_1.2fr_1fr_1fr_auto]">
-              <div className="field h-11 bg-white border border-slate-200 rounded-xl">
+              <div className="field h-11 xl:h-12 bg-white border border-slate-200 rounded-xl">
                 <input
                   value={heroSearch}
                   onChange={(e) => setHeroSearch(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleHeroSearch()}
                   placeholder="Enter Locality (e.g. Prem Mandir, Omaxe)"
-                  className="text-xs text-navy placeholder:text-slate-400"
+                  className="text-xs xl:text-sm text-navy placeholder:text-slate-400"
                 />
               </div>
 
-              <div className="field h-11 bg-white border border-slate-200 rounded-xl">
+              <div className="field h-11 xl:h-12 bg-white border border-slate-200 rounded-xl">
                 <select
                   value={heroType}
                   onChange={(e) => setHeroType(e.target.value)}
-                  className="w-full bg-transparent text-xs text-navy outline-none cursor-pointer"
+                  className="w-full bg-transparent text-xs xl:text-sm text-navy outline-none cursor-pointer"
                 >
                   <option value="">All Property Types</option>
                   {PROPERTY_TYPES.map((type) => (
@@ -231,29 +243,29 @@ export default function PropertiesPage() {
                 </select>
               </div>
 
-              <div className="field h-11 bg-white border border-slate-200 rounded-xl">
+              <div className="field h-11 xl:h-12 bg-white border border-slate-200 rounded-xl">
                 <input
                   type="number"
                   value={heroMinPrice}
                   onChange={(e) => setHeroMinPrice(e.target.value)}
                   placeholder="Min Price (₹)"
-                  className="text-xs text-navy placeholder:text-slate-400"
+                  className="text-xs xl:text-sm text-navy placeholder:text-slate-400"
                 />
               </div>
 
-              <div className="field h-11 bg-white border border-slate-200 rounded-xl">
+              <div className="field h-11 xl:h-12 bg-white border border-slate-200 rounded-xl">
                 <input
                   type="number"
                   value={heroMaxPrice}
                   onChange={(e) => setHeroMaxPrice(e.target.value)}
                   placeholder="Max Price (₹)"
-                  className="text-xs text-navy placeholder:text-slate-400"
+                  className="text-xs xl:text-sm text-navy placeholder:text-slate-400"
                 />
               </div>
 
               <button
                 onClick={handleHeroSearch}
-                className="flex h-11 items-center justify-center gap-2 rounded-xl bg-navy px-6 text-xs font-bold text-white transition-all hover:bg-gold hover:text-navy hover:shadow-md cursor-pointer"
+                className="flex h-11 xl:h-12 items-center justify-center gap-2 rounded-xl bg-navy px-6 xl:px-8 text-xs xl:text-sm font-bold text-white transition-all hover:bg-gold hover:text-navy hover:shadow-md cursor-pointer"
               >
                 <Search size={16} className="text-gold" /> Search
               </button>
@@ -263,28 +275,30 @@ export default function PropertiesPage() {
       </section>
 
       {/* Main Listing & Filters Section */}
-      <main className="mx-auto mt-6 grid w-full min-w-0 max-w-[1400px] grid-cols-1 gap-6 px-3 sm:px-5 lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[300px_minmax(0,1fr)] lg:px-[4.5%]">
-        
+      <main className="mx-auto mt-6 grid w-full min-w-0 max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1720px] grid-cols-1 gap-6 xl:gap-7 2xl:gap-8 px-3 sm:px-4 lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[310px_minmax(0,1fr)] 2xl:grid-cols-[330px_minmax(0,1fr)] lg:pl-3 lg:pr-5 xl:px-6 2xl:px-8">
+
         {/* Desktop Sidebar Filters (Hidden on Mobile) */}
-        <div className="hidden lg:block">
-          <PropertyFilters
-            filters={filters}
-            setFilters={setFilters}
-            onApply={(f) => {
-              setAppliedFilters(f);
-              setCurrentPage(1);
-            }}
-            onClear={handleClearAll}
-          />
+        <div className="hidden lg:block" style={{ marginTop: '53px' }}>
+          <div className="sticky top-24">
+            <PropertyFilters
+              filters={filters}
+              setFilters={setFilters}
+              onApply={(f) => {
+                setAppliedFilters(f);
+                setCurrentPage(1);
+              }}
+              onClear={handleClearAll}
+            />
+          </div>
         </div>
 
         {/* Property Grid Results Column */}
         <section className="min-w-0 max-w-full">
           {/* Top Bar Header */}
           <div className="mb-4 flex min-h-10 flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-3">
-            
+
             <div className="flex items-center gap-3">
-              <h2 className="text-base font-bold text-navy">
+              <h2 className="text-base xl:text-lg 2xl:text-xl font-bold text-navy">
                 <span className="text-[#df9a08]">{filteredProperties.length}</span> Properties Found
                 <span className="text-xs font-normal text-slate-500 ml-2 hidden sm:inline">
                   ({tab === "Liked Properties" ? "Saved Wishlist" : tab === "All Properties" ? "All" : tab === "Buy" ? "For Sale" : "For Rent"})
@@ -311,18 +325,16 @@ export default function PropertiesPage() {
               <div className="hidden sm:flex overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <button
                   onClick={() => setView("grid")}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition cursor-pointer ${
-                    view === "grid" ? "bg-[#fff8e6] font-bold text-[#9c7000]" : "text-slate-600 hover:bg-slate-50"
-                  }`}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition cursor-pointer ${view === "grid" ? "bg-[#fff8e6] font-bold text-[#9c7000]" : "text-slate-600 hover:bg-slate-50"
+                    }`}
                   aria-label="Grid View"
                 >
                   <Grid2X2 size={14} /> Grid
                 </button>
                 <button
                   onClick={() => setView("list")}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition cursor-pointer ${
-                    view === "list" ? "bg-[#fff8e6] font-bold text-[#9c7000]" : "text-slate-600 hover:bg-slate-50"
-                  }`}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 text-xs transition cursor-pointer ${view === "list" ? "bg-[#fff8e6] font-bold text-[#9c7000]" : "text-slate-600 hover:bg-slate-50"
+                    }`}
                   aria-label="List View"
                 >
                   <List size={14} /> List
@@ -382,70 +394,102 @@ export default function PropertiesPage() {
               />
             </>
           )}
-
-          {/* Schedule Site Visit / Request Property Info Lead Form */}
-          <div className="mt-10 mb-8">
-            <PropertyInquiryForm />
-          </div>
-
-          {/* Map View & Why Choose VRV Section */}
-          <div className="mt-8 grid min-w-0 gap-5 lg:grid-cols-[1.2fr_1fr]">
-            <div>
-              <h3 className="mb-2 text-sm font-bold text-navy">Interactive Map Locations</h3>
-              <PropertyMap properties={filteredProperties.length ? filteredProperties : properties} />
-            </div>
-
-            <div id="about-us" className="scroll-mt-24 flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div>
-                <span className="text-[10px] font-bold tracking-wider text-gold uppercase">About VRV Group</span>
-                <h3 className="text-base font-bold text-navy mt-0.5">Your Trusted Real Estate &amp; Travel Partner</h3>
-                <p className="mt-1.5 text-xs text-slate-600 leading-relaxed mb-4">
-                  {SITE_CONFIG.name} is dedicated to providing transparent, hassle-free property buying, selling, and renting services in the holy city of Mathura–Vrindavan.
-                </p>
-                <div className="space-y-2.5">
-                  {[
-                    "100% Verified Legal Titles & Direct Owner Deals",
-                    "Best Price Guarantee with Zero Hidden Charges",
-                    "Complete Assistance with Site Visits & Legal Registry",
-                    "Local Expertise in Prem Mandir, ISKCON & Bankey Bihari Belts",
-                  ].map((item) => (
-                    <p key={item} className="flex items-center gap-2 text-xs font-medium text-slate-700">
-                      <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-600">
-                        <Check size={10} strokeWidth={3} />
-                      </span>
-                      {item}
-                    </p>
-                  ))}
-                </div>
-              </div>
-
-              {/* Contact Us WhatsApp Banner */}
-              <div className="mt-4 rounded-xl bg-[#eefbf3] p-4 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <b className="block text-xs text-emerald-950 font-bold">Have Questions or Need Site Visit?</b>
-                  <span className="text-[10px] text-emerald-700">Chat directly with VRV local team on WhatsApp</span>
-                </div>
-                <div className="flex gap-2 shrink-0">
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 rounded-lg bg-emerald-600 px-3.5 py-2 text-xs font-bold text-white hover:bg-emerald-700 transition shadow-sm"
-                  >
-                    <MessageCircle size={14} /> WhatsApp
-                  </a>
-                  <a
-                    href={`tel:${SITE_CONFIG.phone1}`}
-                    className="flex items-center gap-1 rounded-lg border border-emerald-600 bg-white px-3 py-2 text-xs font-bold text-emerald-800 hover:bg-emerald-50 transition shadow-xs"
-                  >
-                    <Phone size={14} /> Call
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
       </main>
+
+      {/* ===================== ARCHITECTURAL SHOWCASE + SITE VISIT FORM + INTERACTIVE MAP ===================== */}
+      <section className="mx-auto mt-10 mb-16 w-full min-w-0 max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1720px] px-3 sm:px-4 lg:pl-3 lg:pr-5 xl:px-6 2xl:px-8">
+        <div className="flex flex-col lg:flex-row items-stretch gap-6 xl:gap-8">
+
+          {/* Left House Architectural Showcase (Prominently sized on left side of Form & Map) */}
+          <div className="hidden lg:flex shrink-0 w-[420px] xl:w-[490px] 2xl:w-[540px] flex-col justify-center items-center relative self-stretch overflow-hidden">
+            <img
+              src="/images/real-estate-feature-visual.png"
+              alt="VRV Group Luxury Architecture & Prime Real Estate"
+              className="w-full h-full max-h-[850px] object-contain object-center pointer-events-none select-none drop-shadow-sm scale-y-[1.12] origin-center"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Right Column: Schedule Site Visit Form + Interactive Map & About VRV */}
+          <div className="flex-1 min-w-0 flex flex-col justify-between gap-6 xl:gap-7">
+            {/* Schedule Site Visit / Request Property Info Lead Form */}
+            <div>
+              <PropertyInquiryForm />
+            </div>
+
+            {/* Map View & Why Choose VRV Section */}
+            <div className="grid min-w-0 gap-5 lg:grid-cols-[1.2fr_1fr]">
+              <div>
+                <h3 className="mb-2 text-sm font-bold text-navy">Interactive Map Locations</h3>
+                <PropertyMap properties={filteredProperties.length ? filteredProperties : properties} />
+              </div>
+
+              <div id="about-us" className="scroll-mt-24 flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div>
+                  <span className="text-[10px] font-bold tracking-wider text-gold uppercase">About VRV Group</span>
+                  <h3 className="text-base font-bold text-navy mt-0.5">Your Trusted Real Estate &amp; Travel Partner</h3>
+                  <p className="mt-1.5 text-xs text-slate-600 leading-relaxed mb-4">
+                    {SITE_CONFIG.name} is dedicated to providing transparent, hassle-free property buying, selling, and renting services in the holy city of Mathura–Vrindavan.
+                  </p>
+                  <div className="space-y-2.5">
+                    {[
+                      "100% Verified Legal Titles & Direct Owner Deals",
+                      "Best Price Guarantee with Zero Hidden Charges",
+                      "Complete Assistance with Site Visits & Legal Registry",
+                      "Local Expertise in Prem Mandir, ISKCON & Bankey Bihari Belts",
+                    ].map((item) => (
+                      <p key={item} className="flex items-center gap-2 text-xs font-medium text-slate-700">
+                        <span className="grid h-4 w-4 shrink-0 place-items-center rounded-full bg-emerald-100 text-emerald-600">
+                          <Check size={10} strokeWidth={3} />
+                        </span>
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Contact Us WhatsApp Banner */}
+                <div className="mt-4 rounded-xl bg-[#eefbf3] p-4 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div>
+                    <b className="block text-xs text-emerald-950 font-bold">Have Questions or Need Site Visit?</b>
+                    <span className="text-[10px] text-emerald-700">Chat directly with VRV local team on WhatsApp</span>
+                  </div>
+                  <div className="flex gap-2 shrink-0">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 rounded-lg bg-emerald-600 px-3.5 py-2 text-xs font-bold text-white hover:bg-emerald-700 transition shadow-sm"
+                    >
+                      <MessageCircle size={14} /> WhatsApp
+                    </a>
+                    <a
+                      href={`tel:${SITE_CONFIG.phone1}`}
+                      className="flex items-center gap-1 rounded-lg border border-emerald-600 bg-white px-3 py-2 text-xs font-bold text-emerald-800 hover:bg-emerald-50 transition shadow-xs"
+                    >
+                      <Phone size={14} /> Call
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ambient Halo Glow */}
+      <div
+        className="absolute -bottom-24 -left-24 w-[460px] h-[460px] rounded-full pointer-events-none -z-10"
+        style={{
+          background: 'radial-gradient(circle, rgba(238, 245, 252, 0.85) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Bottom-Left Real Estate Modern Villa Art Watermark (FAQ Sister Style) */}
+      <div className="absolute bottom-0 left-0 w-[340px] sm:w-[420px] md:w-[480px] pointer-events-none -z-0 select-none opacity-65">
+        <RealEstateArchitectureArt className="w-full h-auto" />
+      </div>
 
       {/* ===================== MOBILE FILTER MODAL / BOTTOM SHEET ===================== */}
       {mobileFiltersOpen && (

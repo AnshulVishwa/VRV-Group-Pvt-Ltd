@@ -11,6 +11,7 @@ import { SITE_CONFIG } from "../../constants/siteConfig";
 import { formatPrice } from "../../utils/formatters";
 import { useLiked } from "../../context/LikedContext";
 import PropertyInquiryForm from "../../components/property/PropertyInquiryForm";
+import { ArchitecturalCadastreTexture } from "../../components/common/PageTextures";
 
 export default function PropertyDetailsPage() {
   const { id } = useParams();
@@ -112,8 +113,11 @@ export default function PropertyDetailsPage() {
           </div>
 
           {/* Details Column */}
-          <div className="flex flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-card">
-            <div className="flex items-center justify-between">
+          <div className="relative overflow-hidden flex flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-card">
+            {/* Architectural Blueprint Cadastre Texture */}
+            <ArchitecturalCadastreTexture className="absolute -top-6 -right-6 w-64 h-36 pointer-events-none select-none" opacity={0.12} />
+
+            <div className="relative z-10 flex items-center justify-between">
               <Badge variant={property.status === "For Rent" ? "rent" : "sale"}>
                 {property.status}
               </Badge>

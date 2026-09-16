@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { VrindavanTempleArt } from './common/PageTextures'
 
 const values = [
   {
@@ -26,8 +27,13 @@ const values = [
 
 export default function ValueCards() {
   return (
-    <section className="section-bg px-5 sm:px-6 md:px-16 py-16 md:py-24 border-b border-slate-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="section-bg px-5 sm:px-6 md:px-16 py-16 md:py-24 border-b border-slate-200 overflow-hidden relative">
+      {/* Background Texture: Top-Right open space framing the section header */}
+      <div className="absolute top-2 right-0 w-[420px] sm:w-[480px] md:w-[540px] pointer-events-none -z-0 select-none opacity-45">
+        <VrindavanTempleArt className="w-full h-auto" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,3 +75,6 @@ export default function ValueCards() {
     </section>
   )
 }
+
+
+

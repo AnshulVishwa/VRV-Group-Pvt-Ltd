@@ -2,17 +2,14 @@ import { Link } from 'react-router-dom'
 
 export default function CtaSection({ onPlanVisit }) {
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden text-center">
-      {/* Background Image with Dark Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero_yamuna_ghat.jpg"
-          alt="Yamuna Ghat Sunset Heritage"
-          className="w-full h-full object-cover object-center scale-105"
-        />
-        {/* Dark Navy / Twilight Blue Gradient Overlay matching screenshot */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d1838]/90 via-[#0d1838]/85 to-[#09122b]/95" />
-      </div>
+    <section
+      className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden text-center"
+      style={{ backgroundColor: '#1b2a55' }}
+    >
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{ backgroundColor: '#1b2a55' }}
+      />
 
       {/* Content Container */}
       <div className="relative z-10 max-w-3xl mx-auto">

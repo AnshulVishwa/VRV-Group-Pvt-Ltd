@@ -50,7 +50,7 @@ export default function PropertyInquiryForm({ propertyTitle, propertyLocation, p
           {propertyTitle ? `Inquire About ${propertyTitle}` : 'Schedule a Free Site Visit'}
         </h3>
         <p className="text-xs text-slate-500 mt-1">
-          Direct assistance from our local property advisors in Mathura–Vrindavan.
+          Direct assistance from our local property advisors in Vrindavan–Mathura.
         </p>
       </div>
 

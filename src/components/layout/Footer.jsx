@@ -15,6 +15,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { SITE_CONFIG } from "../../constants/siteConfig";
+import { VrindavanSkylineFooterTexture, VipRibbonTexture } from "../common/PageTextures";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -31,56 +32,59 @@ export default function Footer() {
   return (
     <footer className="relative bg-gradient-to-b from-[#0e172e] via-navy-950 to-[#070b16] text-white overflow-hidden border-t border-gold/20 font-sans">
       {/* Decorative Golden Ambient Glow Background */}
-      <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none heavenly-aura" />
+{/* 
+<div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none heavenly-aura" />
 
-      {/* 1. PRE-FOOTER VIP CONSULTATION RIBBON */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-10 sm:pt-14 pb-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#172449] via-[#1f305f] to-[#172449] border border-gold/30 p-6 sm:p-8 lg:p-10 shadow-2xl"
-        >
-          {/* Shimmer accent line */}
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
+// 1. PRE-FOOTER VIP CONSULTATION RIBBON
+<div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 pt-10 sm:pt-14 pb-8">
+  <motion.div
+    initial={{ opacity: 0, y: 25 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-60px" }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#172449] via-[#1f305f] to-[#172449] border border-gold/30 p-6 sm:p-8 lg:p-10 shadow-2xl"
+  >
+    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
-          <div className="grid lg:grid-cols-12 gap-6 items-center">
-            <div className="lg:col-span-8 space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-gold/15 border border-gold/30 px-3 py-1 text-xs font-bold text-gold-light">
-                <Sparkles size={14} className="text-gold" />
-                <span>Braj Pilgrimage &bull; Real Estate &bull; Car Rental</span>
-              </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-white tracking-tight">
-                Planning Your Braj Yatra or Investing in Vrindavan Real Estate?
-              </h3>
-              <p className="text-sm text-slate-300 max-w-2xl leading-relaxed font-sans">
-                Get authentic, on-the-ground local guidance from our Mathura-Vrindavan specialists. We offer 100% verified properties, customized sacred tour packages, and reliable 24/7 chauffeur cabs.
-              </p>
-            </div>
+    <div className="grid lg:grid-cols-12 gap-6 items-center">
+      <div className="lg:col-span-8 space-y-2">
+        <div className="inline-flex items-center gap-2 rounded-full bg-gold/15 border border-gold/30 px-3 py-1 text-xs font-bold text-gold-light">
+          <Sparkles size={14} className="text-gold" />
+          <span>Braj Pilgrimage &bull; Real Estate &bull; Car Rental</span>
+        </div>
 
-            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold hover:bg-[#b88e16] text-white px-6 py-3 text-sm font-bold shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 active:scale-95 cursor-pointer whitespace-nowrap shimmer-btn"
-              >
-                <MessageCircle size={18} />
-                <span>WhatsApp Consultation</span>
-              </a>
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-white tracking-tight">
+          Planning Your Braj Yatra or Investing in Vrindavan Real Estate?
+        </h3>
 
-              <a
-                href={`tel:${SITE_CONFIG.phone1}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3 text-sm font-semibold text-white transition backdrop-blur-sm hover:-translate-y-0.5 active:scale-95 cursor-pointer whitespace-nowrap"
-              >
-                <Phone size={15} className="text-gold" />
-                <span>Call Hotline: {SITE_CONFIG.phone1Formatted}</span>
-              </a>
-            </div>
-          </div>
-        </motion.div>
+        <p className="text-sm text-slate-300 max-w-2xl leading-relaxed font-sans">
+          Get authentic, on-the-ground local guidance from our Mathura-Vrindavan specialists. We offer 100% verified properties, customized sacred tour packages, and reliable 24/7 chauffeur cabs.
+        </p>
       </div>
+
+      <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-gold hover:bg-[#b88e16] text-white px-6 py-3 text-sm font-bold shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5 active:scale-95 cursor-pointer whitespace-nowrap shimmer-btn"
+        >
+          <MessageCircle size={18} />
+          <span>WhatsApp Consultation</span>
+        </a>
+
+        <a
+          href={`tel:${SITE_CONFIG.phone1}`}
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3 text-sm font-semibold text-white transition backdrop-blur-sm hover:-translate-y-0.5 active:scale-95 cursor-pointer whitespace-nowrap"
+        >
+          <Phone size={15} className="text-gold" />
+          <span>Call Hotline: {SITE_CONFIG.phone1Formatted}</span>
+        </a>
+      </div>
+    </div>
+  </motion.div>
+</div>
+*/}
 
       {/* 2. MAIN 4-COLUMN FOOTER BODY */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 py-10 sm:py-12 border-t border-white/10">
@@ -100,13 +104,13 @@ export default function Footer() {
                   VRV GROUP
                 </div>
                 <div className="text-[11px] font-bold text-gold uppercase tracking-wider">
-                  PVT. LTD. &bull; Mathura–Vrindavan
+                  PVT. LTD. &bull; Vrindavan-Mathura
                 </div>
               </div>
             </Link>
 
             <p className="text-sm text-slate-300 leading-relaxed font-sans pr-2">
-              Mathura–Vrindavan’s premier multidisciplinary group dedicated to providing seamless Braj Yatra pilgrimages, legally verified luxury real estate investments, and reliable round-the-clock car rentals.
+             Vrindavan-Mathura’s premier multidisciplinary group dedicated to providing seamless Braj Yatra pilgrimages, legally verified luxury real estate investments, and reliable round-the-clock car rentals.
             </p>
 
             {/* Trust Checkpoints */}
@@ -124,29 +128,35 @@ export default function Footer() {
                 <span>Dedicated Local Braj Tour Guides</span>
               </div>
 
-              <a
-              href="https://www.instagram.com/vrvgroup.official?igsi=NjdwZGRvMmd6cm5n"
-              target="_blank"
-               rel="noopener noreferrer"
-               className="block"
-               >
-               <div className="flex items-center gap-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-gold/40 p-3 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer">
-    
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
-                     ◎
-              </div>
+              
+{/* Instagram */}
+<a
+  href="https://www.instagram.com/vrvgroup.official"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center gap-3 mt-2 text-slate-300 hover:text-gold transition-colors group"
+  aria-label="Follow VRV Group on Instagram"
+>
+  <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 group-hover:border-gold/40 group-hover:bg-gold/10 flex items-center justify-center transition-all">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      className="w-5 h-5"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  </div>
 
-                <div>
-            <div className="text-sm font-bold text-white">
-             Follow VRV Group
-                </div>
-             <div className="text-xs text-slate-400">
-              @vrvgroup.official
-             </div>
-            </div>
+  <span className="text-xs font-medium group-hover:text-gold transition-colors">
+    @vrvgroup.official
+  </span>
+</a>
 
-           </div>
-           </a>
             </div>
           </div>
 
@@ -288,6 +298,7 @@ export default function Footer() {
                 <div>
                   <div className="text-[10px] text-slate-400">Primary Hotline</div>
                   <div className="font-bold text-sm">{SITE_CONFIG.phone1Formatted}</div>
+                   <div className="font-bold text-sm">{SITE_CONFIG.phone2Formatted}</div>
                 </div>
               </a>
 
@@ -301,6 +312,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Continuous Panoramic Vrindavan Sacred Skyline Silhouette */}
+      <div className="relative w-full h-24 sm:h-28 overflow-hidden pointer-events-none select-none -mb-1">
+        <VrindavanSkylineFooterTexture className="absolute bottom-0 left-0 w-full h-full" opacity={0.12} />
       </div>
 
       {/* 3. BOTTOM LEGAL STRIP & BACK TO TOP */}

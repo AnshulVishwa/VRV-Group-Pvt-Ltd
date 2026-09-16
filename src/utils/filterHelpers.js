@@ -75,10 +75,8 @@ export function filterPropertyList(properties, options = {}) {
     result.sort((a, b) => a.price - b.price);
   } else if (sort === "Price: High to Low") {
     result.sort((a, b) => b.price - a.price);
-  } else {
-    // Newest First (by ID desc)
-    result.sort((a, b) => b.id - a.id);
   }
+  // Otherwise preserve curated properties order (Newest / Default)
 
   return result;
 }

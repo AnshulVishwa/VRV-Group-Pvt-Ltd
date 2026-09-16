@@ -11,11 +11,11 @@ export default function SEOHead({
 }) {
   const fullTitle = title
     ? `${title} | ${SITE_CONFIG.shortName}`
-    : `${SITE_CONFIG.name} | Real Estate Mathura–Vrindavan`;
+    : `${SITE_CONFIG.name} | Real Estate Vrindavan–Mathura`;
 
   const fullDescription =
     description ||
-    `Find verified residential flats, apartments, villas, studios, and plots in Mathura & Vrindavan with ${SITE_CONFIG.name}. Your trust, our promise.`;
+    `Find verified residential flats, apartments, villas, studios, and plots in Vrindavan & Mathura  with ${SITE_CONFIG.name}. Your trust, our promise.`;
 
   const pageUrl = canonicalUrl || (typeof window !== "undefined" ? window.location.href : SITE_CONFIG.domain);
 
@@ -84,7 +84,7 @@ export default function SEOHead({
         "addressRegion": "Uttar Pradesh",
         "addressCountry": "IN"
       },
-      "areaServed": ["Mathura", "Vrindavan"]
+      "areaServed": ["Vrindavan", "Mathura"]
     };
 
     scriptTag.textContent = JSON.stringify(jsonLd || defaultJsonLd);

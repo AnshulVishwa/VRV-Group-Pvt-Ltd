@@ -13,6 +13,7 @@ import {
 import BookingModal from '../../components/Tours/Home/BookingModal'
 import ItinerarySection from '../../components/Tours/Home/ItinerarySection'
 import tourPackageData from '../../data/tourPackageData.app.json'
+import { BrajYatraRouteTexture } from '../../components/common/PageTextures'
 
 export default function PackageDetails() {
   const { id } = useParams()
@@ -121,8 +122,7 @@ export default function PackageDetails() {
               </div>
 
               {/* Package Name */}
-              {/* Fixed height keeps all package hero sections aligned */}
-              <h1 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-4 h-auto sm:h-[120px] flex items-center">
+              <h1 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight mb-4 min-h-[64px] sm:min-h-[96px] flex items-center">
                 {pkg.package_name}
               </h1>
 
@@ -243,10 +243,12 @@ export default function PackageDetails() {
       {/* ========================================================= */}
 
       <section className="pb-16 px-4 sm:px-6 lg:px-8 bg-[#f8f9fd]">
+        <div className="relative overflow-hidden max-w-4xl mx-auto text-center bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+          {/* Sacred Yatra Route Watermark */}
+          <BrajYatraRouteTexture className="absolute -top-10 -right-10 w-80 h-44 pointer-events-none select-none" opacity={0.15} />
 
-        <div className="max-w-4xl mx-auto text-center bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-
-          <h4 className="font-display text-2xl font-bold text-[#13264f] mb-2">
+          <div className="relative z-10">
+            <h4 className="font-display text-2xl font-bold text-[#13264f] mb-2">
             Ready to embark on this spiritual journey?
           </h4>
 
@@ -278,7 +280,7 @@ export default function PackageDetails() {
             </a>
 
           </div>
-
+          </div>
         </div>
       </section>
 

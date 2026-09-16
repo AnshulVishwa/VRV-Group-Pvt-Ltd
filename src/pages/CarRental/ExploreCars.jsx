@@ -21,6 +21,7 @@ import {
 import { CAR_FLEET, CAR_CATEGORIES, CAR_TERMS } from './data/cars'
 import { SITE_CONFIG } from '../../constants/siteConfig'
 import SEOHead from '../../components/common/SEOHead'
+import { MobilityExpresswayTexture } from '../../components/common/PageTextures'
 
 export default function ExploreCars() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -278,9 +279,13 @@ Pickup: ${CAR_TERMS.pickupLocation}`
           HERO HEADER
       ====================================================== */}
 
-      <section className="bg-[#0f1d3a] text-white pt-12 pb-14 px-4 sm:px-6 lg:px-8 border-b border-gold/20">
+      <section className="relative overflow-hidden bg-[#0f1d3a] text-white pt-12 pb-14 px-4 sm:px-6 lg:px-8 border-b border-gold/20">
+        {/* Modern Highway Mobility Texture */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+          <MobilityExpresswayTexture className="absolute -top-10 -right-10 w-[600px] h-[340px]" opacity={0.16} />
+        </div>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto relative z-10">
 
           <Link
             to="/car-rental"
@@ -762,7 +767,7 @@ Pickup: ${CAR_TERMS.pickupLocation}`
 
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy/80 backdrop-blur-sm animate-fade-in overflow-y-auto">
 
-            <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-6 sm:p-8 relative border border-gold/30 my-8">
+            <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-5 sm:p-8 relative border border-gold/30 my-auto max-h-[85vh] sm:max-h-[90vh] overflow-y-auto">
 
               {/* CLOSE */}
 

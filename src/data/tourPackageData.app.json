@@ -6,7 +6,7 @@
     "tagline": "Aadhyatmik Yatra, Divya Anubhav aur Yaadgaar Safar ke saath",
     "price_inr": 30000,
     "badge": "Most Popular Yatra",
-    "image": "/images/pkg_vrindavan.jpg",
+    "image": " /images/iternary_images/krishna_janmbhoomi.jpg",
     "includes": [
       "Comfortable Room Stay (3 Nights / 4 Days)",
       "Delicious Food (Breakfast, Lunch, Dinner)",
@@ -26,7 +26,7 @@
           "Evening Yamuna Aarti at Keshi Ghat",
           "Return to hotel & overnight stay"
         ],
-        "image": "/images/itinerary_archway.jpg",
+        "image": " /images/iternary_images/Bankebihari_temple.JPG",
         "icon": "droplets"
       },
       {
@@ -40,7 +40,7 @@
           "Gokul Dham, Nand Bhawan & Raman Reti",
           "Chinta Haran Mahadev Temple"
         ],
-        "image": "/images/hero_yamuna_ghat.jpg",
+        "image": " /images/iternary_images/krishna_janmbhoomi.jpg",
         "icon": "sun"
       },
       {
@@ -54,7 +54,7 @@
           "Kusum Sarovar Heritage Reflection",
           "Shri Radha Rani Mandir Barsana"
         ],
-        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+        "image": " /images/iternary_images/radharani_braj.jpg",
         "icon": "flower"
       },
       {
@@ -68,7 +68,7 @@
           "Traditional Mathura Peda & Souvenir Shopping",
           "Departure Transfer to Mathura Junction"
         ],
-        "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80",
+        "image": " /images/iternary_images/taj_mahal.jpg",
         "icon": "compass"
       }
     ]
@@ -80,7 +80,7 @@
     "tagline": "Discover Krishna Janmabhoomi, Yamuna Aarti & Sacred Gokul Dham",
     "price_inr": 15000,
     "badge": "Weekend Yatra",
-    "image": "/images/hero_temple_bg.jpg",
+    "image": "  /images/iternary_images/Vishram_ghat.jpeg",
     "includes": [
       "AC Room Stay (1 Night)",
       "Pure Vegetarian Meals (Breakfast & Dinner)",
@@ -100,7 +100,7 @@
           "Evening Yamuna Maha Aarti at Vishram Ghat",
           "Overnight Stay at Vrindavan Hotel"
         ],
-        "image": "/images/hero_yamuna_ghat.jpg",
+        "image": " /images/iternary_images/Vishram_ghat.jpeg",
         "icon": "droplets"
       },
       {
@@ -114,7 +114,7 @@
           "Banke Bihari Ji & ISKCON Temple Darshan",
           "Return Departure Transfer"
         ],
-        "image": "/images/itinerary_archway.jpg",
+        "image": " /images/iternary_images/gokul.jpg",
         "icon": "sun"
       }
     ]
@@ -126,7 +126,7 @@
     "tagline": "Perform Divine Goverdhan Parikrama & Visit Radha Rani's Barsana Dham",
     "price_inr": 22000,
     "badge": "Parikrama Special",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+    "image": " /images/iternary_images/radharani_braj.jpg",
     "includes": [
       "Deluxe Hotel Stay (2 Nights)",
       "Battery E-Rickshaw Parikrama Support",
@@ -145,7 +145,7 @@
           "Mansi Ganga & Radha Kund Darshan",
           "Kusum Sarovar Sunset Reflection"
         ],
-        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+        "image": " /images/iternary_images/govardhan_parikarma.jpg",
         "icon": "droplets"
       },
       {
@@ -158,7 +158,7 @@
           "Dan Ghati & Mukharbind Mandir Darshan",
           "Radha Kund & Shyam Kund Blessings"
         ],
-        "image": "/images/hero_temple_bg.jpg",
+        "image": " /images/iternary_images/daan_ghati.jpg",
         "icon": "flower"
       },
       {
@@ -171,7 +171,7 @@
           "Kirti Mandir Palace & Gardens",
           "Nandgaon Palace Darshan & Departure Transfer"
         ],
-        "image": "/images/itinerary_archway.jpg",
+        "image": " /images/iternary_images/nandgaon-temple.png",
         "icon": "compass"
       }
     ]
@@ -183,7 +183,7 @@
     "tagline": "Comprehensive Chaurasi Kos Darshan plus Agra Taj Mahal & Heritage Monuments",
     "price_inr": 38000,
     "badge": "Grand Yatra",
-    "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80",
+    "image": " /images/iternary_images/taj_mahal_l.jpeg",
     "includes": [
       "4-Star / Premium Hotel Stay (4 Nights)",
       "All Gourmet Sattvik Meals Included",
@@ -202,7 +202,7 @@
           "ISKCON Temple & Nidhivan Darshan",
           "Keshi Ghat Evening Yamuna Aarti"
         ],
-        "image": "/images/itinerary_archway.jpg",
+        "image": " /images/iternary_images/radha_raman.jpg",
         "icon": "droplets"
       },
       {
@@ -213,9 +213,9 @@
         "activities": [
           "Krishna Janmabhoomi Complex",
           "Vishram Ghat Yamuna Boat Darshan",
-          "Gokul Dham & Raman Reti Sand"
+          "Gokul Dham & Raman Reti"
         ],
-        "image": "/images/hero_yamuna_ghat.jpg",
+        "image":" /images/iternary_images/raman_bihari.jpg",
         "icon": "sun"
       },
       {
@@ -228,7 +228,7 @@
           "Radha Kund, Shyam Kund & Kusum Sarovar",
           "Barsana Shri Radha Rani Mandir"
         ],
-        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+        "image": " /images/iternary_images/kusum_sarovar.jpg",
         "icon": "flower"
       },
       {
@@ -241,7 +241,7 @@
           "Agra Fort & Mehtab Bagh",
           "Local Handicrafts & Famous Petha Shopping"
         ],
-        "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80",
+        "image": " /images/iternary_images/taj_mahal.jpg",
         "icon": "sun"
       },
       {
@@ -254,7 +254,7 @@
           "Nandgaon Ancient Kund Darshan",
           "Final Souvenir Shopping & Departure Transfer"
         ],
-        "image": "/images/hero_temple_bg.jpg",
+        "image": " /images/iternary_images/kokilavan.jpg",
         "icon": "compass"
       }
     ]
@@ -266,7 +266,7 @@
     "tagline": "Experience the divine temples, sacred ghats and spiritual atmosphere of Vrindavan Dham",
     "price_inr": 18000,
     "badge": "Vrindavan Special",
-    "image": "/images/pkg_vrindavan.jpg",
+    "image": " /images/iternary_images/iskcon.jpg",
     "includes": [
       "Comfortable AC Room Stay (2 Nights)",
       "Breakfast & Dinner",
@@ -287,22 +287,22 @@
           "Nidhivan & Seva Kunj Visit",
           "Evening Free Time in Vrindavan"
         ],
-        "image": "/images/itinerary_archway.jpg",
+        "image": " /images/iternary_images/nidhivan.jpg",
         "icon": "flower"
       },
       {
         "day": 2,
         "title": "ISKCON, Prem Mandir & Yamuna Aarti",
         "subtitle": "Day 2: Spiritual Vrindavan & Sacred Yamuna Ghats",
-        "description": "Explore the peaceful and beautiful side of Vrindavan with ISKCON Temple, Prem Mandir, Mata Vaishno Devi Dham and an evening visit to the sacred Keshi Ghat for Yamuna Aarti.",
+        "description": "Explore the peaceful and beautiful side of Vrindavan with ISKCON Temple, Prem Mandir,  and an evening visit to the sacred Keshi Ghat for Yamuna Aarti.",
         "activities": [
           "Morning Visit to ISKCON Temple",
           "Prem Mandir Darshan & Garden Visit",
-          "Mata Vaishno Devi Dham",
+          "Char Dham",
           "Keshi Ghat & Yamuna Aarti",
           "Local Vrindavan Bazaar & Souvenir Shopping"
         ],
-        "image": "/images/hero_yamuna_ghat.jpg",
+        "image": " /images/iternary_images/iskcon.jpg",
         "icon": "droplets"
       },
       {
@@ -317,7 +317,7 @@
           "Vrindavan Local Market",
           "Final Blessings & Departure Transfer"
         ],
-        "image": "/images/hero_temple_bg.jpg",
+        "image": " /images/iternary_images/rangji-temple.jpg",
         "icon": "compass"
       }
     ]

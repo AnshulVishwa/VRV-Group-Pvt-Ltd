@@ -22,11 +22,20 @@ export default function PackagesGridSection({ packagesData }) {
           </p>
         </div>
 
-        {/* Asymmetric / Grid Layout matching reference design exactly */}
+        {/* 2x2 package grid followed by the full-width Grand Braj & Agra package */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
-          {packagesData.map((pkg, idx) => {
-            const isFullWidth = idx === 3 // 4th card (Grand Braj & Agra) is full width
+          {[
+            // Keep the first three packages in their existing order,
+            // move the 5th package into the 2x2 grid,
+            // and place the Grand Braj & Agra package last as a full-width card.
+            packagesData[0],
+            packagesData[1],
+            packagesData[2],
+            packagesData[4],
+            packagesData[3],
+          ].filter(Boolean).map((pkg, idx) => {
+            const isFullWidth = idx === 4 // Grand Braj & Agra is now the last/full-width card
 
             return (
               <div

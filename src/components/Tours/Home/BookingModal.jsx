@@ -43,7 +43,7 @@ export default function BookingModal({
 *Package:* ${selectedPackage?.package_name || 'Spiritual Yatra'}
 *Duration:* ${selectedPackage?.duration || 'Custom'}
 *Price:* ₹${selectedPackage?.price_inr?.toLocaleString('en-IN') || 'Custom Quote'}
-*Destination Route:* ${destination || 'Mathura & Vrindavan'}
+*Destination Route:* ${destination || 'Vrindavan & Mathura'}
 *Date:* ${travelDate || 'Flexible'}
 *Pilgrims:* ${pilgrimsCount || '1-2 Yatris'}
 *Yatri Name:* ${yatriName.trim()}
@@ -55,8 +55,8 @@ export default function BookingModal({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy/80 backdrop-blur-sm animate-fade-in">
-      <div className="bg-white rounded-3xl shadow-soft max-w-md w-full p-6 sm:p-8 relative border border-gold/30">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy/80 backdrop-blur-sm animate-fade-in overflow-y-auto">
+      <div className="bg-white rounded-3xl shadow-soft max-w-md w-full p-6 sm:p-8 relative border border-gold/30 max-h-[85vh] sm:max-h-[90vh] overflow-y-auto my-auto">
         <button
           onClick={onClose}
           className="absolute top-5 right-5 text-muted hover:text-body p-1.5 rounded-full hover:bg-slate-100 transition-colors cursor-pointer"

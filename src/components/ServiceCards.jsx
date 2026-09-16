@@ -34,7 +34,7 @@ const cardVariants = {
 
 export default function ServiceCards() {
   return (
-    <section id="services" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-[#fbfbfe] border-b border-slate-200 overflow-hidden">
+    <section id="services" className="py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#fbfbfe] border-b border-slate-200 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header with In-View Animation */}
@@ -43,15 +43,15 @@ export default function ServiceCards() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto mb-14"
+          className="text-center max-w-3xl mx-auto mb-10 sm:mb-14"
         >
           <span className="eyebrow inline-block mb-2 font-bold text-xs uppercase tracking-widest text-gold">
             What We Deliver
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy tracking-tight mb-4">
+          <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-navy tracking-tight mb-3 sm:mb-4">
             Curated Services Built Around Trust
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-sans max-w-xl mx-auto">
+          <p className="text-slate-600 text-xs sm:text-base leading-relaxed font-sans max-w-xl mx-auto">
             Whether visiting for sacred darshan, investing in prime land, or navigating the city in comfort, our dedicated teams are with you at every step.
           </p>
         </motion.div>
@@ -62,7 +62,7 @@ export default function ServiceCards() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
         >
           {services.map((service) => {
             const IconComp = iconMap[service.id] || Compass
@@ -71,10 +71,10 @@ export default function ServiceCards() {
               <motion.article
                 key={service.id}
                 variants={cardVariants}
-                className="group relative rounded-3xl overflow-hidden shadow-card border border-slate-200/80 bg-white min-h-[380px] flex flex-col justify-between transition-all duration-500 hover:-translate-y-2.5 hover:shadow-2xl hover:border-gold/50"
+                className="group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-card border border-slate-200/80 bg-white min-h-[360px] sm:min-h-[380px] flex flex-col justify-between transition-all duration-500 hover:-translate-y-2.5 hover:shadow-2xl hover:border-gold/50"
               >
                 {/* Top Image Banner */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-44 sm:h-48 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -90,19 +90,19 @@ export default function ServiceCards() {
                 </div>
 
                 {/* Card Body */}
-                <div className="p-6 flex-1 flex flex-col justify-between">
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-navy mb-2.5 group-hover:text-gold transition-colors duration-300">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-navy mb-2 sm:mb-2.5 group-hover:text-gold transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3 mb-6 font-sans">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3 mb-4 sm:mb-6 font-sans">
                       {service.description}
                     </p>
                   </div>
 
                   <Link
                     to={service.href}
-                    className="inline-flex items-center justify-between w-full bg-slate-50 hover:bg-gold hover:text-white text-navy text-xs sm:text-sm font-bold px-4 py-3 rounded-xl border border-slate-200/80 transition-all duration-300 group-hover:border-gold group-hover:shadow-md cursor-pointer"
+                    className="inline-flex items-center justify-between w-full bg-slate-50 hover:bg-gold hover:text-white text-navy text-xs sm:text-sm font-bold px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl border border-slate-200/80 transition-all duration-300 group-hover:border-gold group-hover:shadow-md cursor-pointer"
                   >
                     <span>{service.cta}</span>
                     <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />

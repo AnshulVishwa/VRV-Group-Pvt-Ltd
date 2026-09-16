@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-page text-body font-sans selection:bg-navy selection:text-gold">
       {/* 1. Header Navigation Bar */}
-      
+
 
       {/* 2. Hero Section */}
       <HeroSection
@@ -91,7 +91,7 @@ export default function Home() {
       <FaqSection />
 
       {/* 8. Call to Action Banner Section ("Begin Your Divine Journey") - BEFORE FOOTER */}
-      <CtaSection onPlanVisit={() => handlePlanVisit(null)} />
+      {/* <CtaSection onPlanVisit={() => handlePlanVisit(null)} /> */}
 
       {/* 9. Interactive Booking Callback Modal */}
       <BookingModal
@@ -111,12 +111,7 @@ export default function Home() {
       />
 
       {/* 10. Footer */}
-      
 
-      {/* Bottom Copyright Strip */}
-      <div className="bg-[#131f40] py-4 px-4 text-center border-t border-navy/40 text-xs text-white/60 font-sans">
-        &copy; {new Date().getFullYear()} VRV Group Private Limited. All rights reserved. Timeless Heritage.
-      </div>
     </div>
   )
 }

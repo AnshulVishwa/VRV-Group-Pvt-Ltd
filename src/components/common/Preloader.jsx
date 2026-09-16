@@ -7,6 +7,10 @@ const PRELOAD_IMAGES = [
   '/vrv-logo.svg',
   '/logo.jpeg',
   '/images/founder/nishant.jpeg',
+  '/images/founder/greetika.jpg',
+  '/images/founder/pushkar.jpeg',
+  '/images/founder/sarbjot.jpg',
+  '/images/founder/bikram.jpeg',
   '/images/hero/vrindavan-hero.jpg',
   '/images/services/tours.png',
   '/images/services/car-rental.jpg',
@@ -148,7 +152,7 @@ export default function Preloader() {
         {/* Bottom Trust Badge */}
         <div className="mt-12 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-slate-400">
           <ShieldCheck size={14} className="text-amber-400" />
-          <span>Premier Partner in Mathura & Vrindavan</span>
+          <span>Premier Partner in Vrindavan & Mathura</span>
         </div>
       </div>
     </div>

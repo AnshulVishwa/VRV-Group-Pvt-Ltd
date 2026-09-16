@@ -6,9 +6,9 @@ import WhatsAppButton from '../components/WhatsAppButton';
 
 export default function MainLayout() {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen relative w-full overflow-x-hidden">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow w-full overflow-x-hidden">
         <Outlet />
       </main>
       <Footer />

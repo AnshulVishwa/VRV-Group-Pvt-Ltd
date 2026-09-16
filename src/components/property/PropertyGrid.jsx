@@ -9,7 +9,7 @@ export default function PropertyGrid({ properties, view = "grid", onClearFilters
         <SlidersHorizontal className="mb-3 h-10 w-10 text-gold" />
         <h3 className="text-lg font-bold text-navy">No matching properties found</h3>
         <p className="mt-1 text-xs text-slate-500 max-w-sm">
-          Try resetting or adjusting your filter criteria to see more available listings in Mathura & Vrindavan.
+          Try resetting or adjusting your filter criteria to see more available listings in  Vrindavan & Mathura &.
         </p>
         <button
           onClick={onClearFilters}

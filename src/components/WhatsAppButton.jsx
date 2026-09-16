@@ -6,7 +6,7 @@ export default function WhatsAppButton({ phone = '918950513077' }) {
   const [showTooltip, setShowTooltip] = useState(false)
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center">
       {/* Floating Animated Tooltip with AnimatePresence */}
       <AnimatePresence>
         {showTooltip && (
@@ -36,9 +36,9 @@ export default function WhatsAppButton({ phone = '918950513077' }) {
           onMouseLeave={() => setShowTooltip(false)}
           whileHover={{ scale: 1.12, rotate: 4 }}
           whileTap={{ scale: 0.92 }}
-          className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl transition-shadow duration-300 hover:shadow-emerald-500/50 cursor-pointer"
+          className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white shadow-2xl transition-shadow duration-300 hover:shadow-emerald-500/50 cursor-pointer"
         >
-          <MessageCircle size={28} className="drop-shadow-sm" />
+          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 drop-shadow-sm" />
         </motion.a>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import {
   Building2,
   Car,
@@ -22,8 +23,9 @@ import {
 } from 'lucide-react'
 import { SITE_CONFIG } from '../../constants/siteConfig'
 import SEOHead from '../../components/common/SEOHead'
+import { VrindavanTempleArt } from '../../components/common/PageTextures'
 
-const HERO_IMAGE = '/images/hero/vrindavan-hero.jpg'
+const HERO_IMAGE = '/images/hero/aboutus-hero.png'
 
 export default function About() {
   const teamScrollRef = useRef(null)
@@ -123,35 +125,45 @@ export default function About() {
     }
   ]
 
-  const teamMembers = [
+  const founders = [
     {
-      name: 'Nishant Narwal',
+      name: 'Mr. Nishant Narwal',
       role: 'Founder',
-      dept: 'Leadership',
+      tag: 'Strategic Vision',
       image: '/images/founder/nishant.jpeg',
-      desc: 'Helping shape VRV Group’s strategic direction while driving partnerships, business growth, and long-term vision.'
+      desc: "Helping shape VRV Group's strategic direction while driving partnerships, business growth, and long-term vision."
     },
-     {
-      name: 'Geetika Narwal',
+    {
+      name: 'Mrs. Geetika',
       role: 'Founder',
-      dept: 'Operations',
-      image: '/images/founder/greetika.jpeg',
-      desc: 'Supporting company operations, guest experience, and day-to-day coordination with a focus on trust and service.'
+      tag: 'Operations',
+      image: '/images/founder/greetika.jpg',
+      desc: 'Supporting company operations, guest experience, and day-to-day coordination with a focus on trust and service quality.'
     },
     {
-      name: 'Pushkar',
+      name: 'Mr. Pushkar',
       role: 'Co-Founder',
-      dept: 'Leadership',
-      image: null,
-      desc: 'Helping shape VRV Group’s strategic direction while driving partnerships, business growth, and long-term vision.'
+      tag: 'Partnerships',
+      image: '/images/founder/pushkar.jpeg',
+      desc: 'Supporting company operations, guest experience, and day-to-day coordination with a focus on trust and comfortable experiences.'
     },
     {
-      name: 'Sarbjot Singh',
-      role: 'Manager',
-      dept: 'Management',
-      image: '/members/sarbjot.jpeg' ,
-      desc: 'Coordinating operational workflows and ensuring customer requirements are smoothly fulfilled from enquiry to completion.'
+      name: 'Mr. Sarbjot Singh',
+      role: 'COO',
+      tag: 'Execution',
+      image: '/images/founder/sarbjot.jpeg',
+      desc: 'Directing company operations and overseeing service execution with a focus on quality, reliability, and trust.'
     },
+    {
+      name: 'Mr. Bikram Roy',
+      role: 'Technical Consultant',
+      tag: 'Technology',
+      image: '/images/founder/bikram.jpeg',
+      desc: 'Guiding technical architecture, digital strategy, and platform engineering to ensure innovative and robust solutions.'
+    }
+  ]
+
+  const teamMembers = [
     {
       name: 'Anshul Vishwakarma',
       role: 'SDE Intern',
@@ -163,7 +175,7 @@ export default function About() {
       name: 'Mayank Arya',
       role: 'SDE Intern',
       dept: 'Technology',
-      image: '/members/Mayank.jpeg',
+      image: '/members/mayank.jpeg',
       desc: 'Developing the Car Rental module and building intuitive user interfaces for vehicle booking experiences.'
     },
     {
@@ -202,39 +214,55 @@ export default function About() {
       />
 
       {/* ===================== HERO SECTION ===================== */}
-      <section className="relative overflow-hidden bg-navy text-white py-16 sm:py-24 lg:py-28">
+      <section className="relative min-h-[640px] lg:min-h-[700px] flex items-center bg-navy text-white overflow-hidden py-14 lg:py-20">
 
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center opacity-25 scale-105"
+          className="absolute inset-0 z-0 bg-cover bg-center transition-all duration-1000 scale-105"
           style={{ backgroundImage: `url(${HERO_IMAGE})` }}
         />
 
-        <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0a142c]/90 via-navy/95 to-navy" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#070e20]/95 via-[#0b1633]/90 to-[#070e20]/80" />
+        <div className="absolute inset-0 z-0 bg-radial-gradient from-transparent via-[#070e20]/40 to-[#070e20]/95 pointer-events-none" />
 
-        {/* Glow Blobs */}
-        <div className="absolute top-10 left-1/4 w-80 h-80 rounded-full bg-gold/10 blur-3xl pointer-events-none animate-pulse-subtle" />
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-        <div className="absolute bottom-10 right-1/4 w-96 h-96 rounded-full bg-[#344B86]/20 blur-3xl pointer-events-none animate-float" />
-
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-
-          <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-light mb-5 backdrop-blur-md">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold-light mb-5 backdrop-blur-md"
+          >
             <Sparkles size={14} className="text-gold" />
             <span>About VRV Group Private Limited</span>
-          </div>
+          </motion.div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] mb-6">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] mb-6"
+          >
             One Brand. Three Promises.{' '}
             <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-[#f5d77f]">
               Endless Possibilities.
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 leading-relaxed font-sans mb-8">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="max-w-3xl mx-auto text-base sm:text-lg text-slate-300 leading-relaxed font-sans mb-8"
+          >
             At VRV Group, we believe in creating meaningful experiences and lasting relationships through trust, uncompromising quality, and deeply rooted local care.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-4"
+          >
 
             <a
               href="#who-we-are"
@@ -254,7 +282,7 @@ export default function About() {
               <span>Connect on WhatsApp</span>
             </a>
 
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -376,11 +404,11 @@ export default function About() {
               {/* Bottom Integrated Service Tabs */}
               <div className="bg-navy py-4 px-4 border-t border-white/10">
 
-                <div className="grid grid-cols-3 text-center text-white text-xs sm:text-sm font-bold divide-x divide-white/20">
+                <div className="grid grid-cols-1 xs:grid-cols-3 text-center text-white text-xs sm:text-sm font-bold divide-y xs:divide-y-0 xs:divide-x divide-white/20 gap-2 xs:gap-0">
 
                   <Link
                     to="/real-estate"
-                    className="flex items-center justify-center gap-2 hover:text-gold transition"
+                    className="flex items-center justify-center gap-2 py-1.5 xs:py-0 hover:text-gold transition"
                   >
                     <Building2 size={16} className="text-gold shrink-0" />
                     <span>Real Estate</span>
@@ -388,7 +416,7 @@ export default function About() {
 
                   <Link
                     to="/tours"
-                    className="flex items-center justify-center gap-2 hover:text-gold transition"
+                    className="flex items-center justify-center gap-2 py-1.5 xs:py-0 hover:text-gold transition"
                   >
                     <Compass size={16} className="text-gold shrink-0" />
                     <span>Tours &amp; Travel</span>
@@ -396,7 +424,7 @@ export default function About() {
 
                   <Link
                     to="/car-rental"
-                    className="flex items-center justify-center gap-2 hover:text-gold transition"
+                    className="flex items-center justify-center gap-2 py-1.5 xs:py-0 hover:text-gold transition"
                   >
                     <Car size={16} className="text-gold shrink-0" />
                     <span>Car Rental</span>
@@ -510,9 +538,27 @@ export default function About() {
 
 
       {/* ===================== SECTION: OUR VALUES ===================== */}
-      <section className="py-16 sm:py-24 bg-white border-b border-slate-200">
+      <section className="relative py-20 sm:py-28 bg-[#FAFCFF] border-b border-slate-100 overflow-hidden">
+        {/* Ambient Glow Halos */}
+        <div
+          className="absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full pointer-events-none -z-10"
+          style={{
+            background: 'radial-gradient(circle, rgba(254, 248, 231, 0.7) 0%, rgba(238, 245, 252, 0.3) 60%, transparent 100%)',
+          }}
+        />
+        <div
+          className="absolute -bottom-24 -left-24 w-[440px] h-[440px] rounded-full pointer-events-none -z-10"
+          style={{
+            background: 'radial-gradient(circle, rgba(238, 245, 252, 0.85) 0%, transparent 70%)',
+          }}
+        />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Bottom-Left Vrindavan Temple Skyline Watermark (Grounded FAQ Sister Style) */}
+        <div className="absolute bottom-0 left-0 w-[340px] sm:w-[420px] md:w-[480px] pointer-events-none -z-0 select-none opacity-55">
+          <VrindavanTempleArt className="w-full h-auto" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
 
           <div className="max-w-3xl mx-auto mb-14">
 
@@ -564,6 +610,7 @@ export default function About() {
       </section>
 
 
+
       {/* ===================== SECTION: TRUST STATS STRIP ===================== */}
       <section className="bg-navy text-white py-12 md:py-16 border-y border-gold/30">
 
@@ -600,20 +647,20 @@ export default function About() {
 
 
       {/* ===================== SECTION: FOUNDERS ===================== */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-200">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-slate-200">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-8">
 
           <span className="eyebrow inline-block font-bold text-xs uppercase tracking-widest text-gold border-b-2 border-gold pb-1">
-            OUR FOUNDERS
+            OUR LEADERSHIP
           </span>
 
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight mt-4">
+          <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-navy leading-tight mt-3">
             The People Behind <span className="text-gold">VRV Group</span>
           </h2>
 
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mt-4 max-w-2xl mx-auto">
+          <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mt-2 max-w-2xl mx-auto">
             Driven by trust, local expertise, and a commitment to creating dependable experiences across Tours &amp; Travels, Real Estate, and Car Rental.
           </p>
 
@@ -621,119 +668,103 @@ export default function About() {
 
 
         {/* ===================== FOUNDERS CARDS ===================== */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-4 xl:gap-5 max-w-7xl mx-auto pb-4 items-start">
+          {founders.map((founder, idx) => {
+            const initials = founder.name
+              .replace(/^(Mr|Mrs|Ms|Dr)\.?\s+/i, '')
+              .split(' ')
+              .map((n) => n[0])
+              .join('')
 
-          {/* ===================== NISHANT ===================== */}
-          <div className="group relative bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-gold/50 transition-all duration-500 hover:-translate-y-2">
+            return (
+              <div
+                key={idx}
+                className="group relative bg-white rounded-2xl border border-slate-200/90 shadow-sm transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-gold/25 hover:border-gold/80 hover:scale-105 hover:z-30 p-3.5 flex flex-col"
+              >
+                {/* Top Glowing Gold Accent Line */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/30 via-gold to-gold/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl z-20" />
 
-            <div className="relative h-80 sm:h-96 overflow-hidden bg-navy">
+                {/* 1:1 Aspect Ratio Image */}
+                <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-navy">
+                  {founder.image ? (
+                    <img
+                      src={founder.image}
+                      alt={`${founder.name} - ${founder.role}`}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                      onError={(e) => {
+                        e.currentTarget.classList.add('hidden')
+                        if (e.currentTarget.nextElementSibling) {
+                          e.currentTarget.nextElementSibling.classList.remove('hidden')
+                          e.currentTarget.nextElementSibling.classList.add('flex')
+                        }
+                      }}
+                    />
+                  ) : null}
 
-              <img
-                src="/images/founder/nishant.jpeg"
-                alt="Nishant Narwal - Co-Founder"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                onError={(e) => {
-                  e.currentTarget.src = '/vrv-logo.webp'
-                }}
-              />
+                  {/* Monogram Avatar Fallback */}
+                  <div
+                    className={`w-full h-full flex-col items-center justify-center bg-gradient-to-br from-[#0c1830] via-[#16274a] to-[#091326] p-4 text-center ${founder.image ? 'hidden' : 'flex'
+                      }`}
+                  >
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/30 via-navy-800 to-gold/10 border border-gold/50 text-gold flex items-center justify-center text-xl font-bold font-display shadow-md shadow-gold/10 group-hover:scale-105 transition-transform duration-500 mb-2">
+                      {initials}
+                    </div>
+                    <span className="text-[10px] font-bold text-slate-300 tracking-wide uppercase">
+                      VRV Leadership
+                    </span>
+                  </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/20 to-transparent" />
-
-              <div className="absolute bottom-5 left-5 right-5">
-
-                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white group-hover:text-gold transition-colors">
-                  Nishant Narwal
-                </h3>
-
-                <div className="flex items-center gap-2 mt-1">
-
-                  <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-
-                  <span className="text-xs sm:text-sm font-bold text-gold uppercase tracking-wider">
-                    Co-Founder &bull; VRV Group
-                  </span>
-
+                  {/* Floating Specialty Tag Badge */}
+                  {founder.tag && (
+                    <div className="absolute top-2.5 right-2.5 z-10">
+                      <span className="text-[9px] font-extrabold uppercase tracking-wider bg-navy/85 backdrop-blur-md text-gold border border-gold/40 px-2 py-0.5 rounded-full shadow-sm">
+                        {founder.tag}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
-              </div>
-            </div>
+                {/* Smaller Card Info: Name & Role (Clearly visible, prominent & high contrast) */}
+                <div className="pt-3 pb-1 text-center">
+                  <h3 className="font-display text-base font-bold text-navy group-hover:text-gold transition-colors leading-tight">
+                    {founder.name}
+                  </h3>
 
+                  <div className="flex items-center justify-center gap-1.5 mt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
+                    <span className="text-[11px] font-bold text-gold uppercase tracking-wider">
+                      {founder.role}
+                    </span>
+                  </div>
 
-            <div className="p-6 sm:p-7">
-
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Helping shape VRV Group's strategic direction while driving partnerships, business growth, and long-term vision. His focus is on building trustworthy and dependable services for every customer.
-              </p>
-
-              <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2">
-
-                <BadgeCheck size={16} className="text-gold" />
-
-                <span className="text-xs font-bold text-navy uppercase tracking-wider">
-                  Leadership
-                </span>
-
-              </div>
-
-            </div>
-          </div>
-
-
-          {/* ===================== GEETIKA ===================== */}
-          <div className="group relative bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-2xl hover:border-gold/50 transition-all duration-500 hover:-translate-y-2">
-
-            <div className="relative h-80 sm:h-96 overflow-hidden bg-navy">
-
-              <img
-                src="/images/founder/greetika.jpeg"
-                alt="Geetika Narwal - Co-Founder"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                onError={(e) => {
-                  e.currentTarget.src = '/vrv-logo.webp'
-                }}
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/20 to-transparent" />
-
-              <div className="absolute bottom-5 left-5 right-5">
-
-                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white group-hover:text-gold transition-colors">
-                  Geetika Narwal
-                </h3>
-
-                <div className="flex items-center gap-2 mt-1">
-
-                  <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-
-                  <span className="text-xs sm:text-sm font-bold text-gold uppercase tracking-wider">
-                    Co-Founder &bull; VRV Group
-                  </span>
-
+                  <p className="text-[10px] text-slate-400 font-medium mt-0.5">
+                    VRV Group
+                  </p>
                 </div>
 
+                {/* Expandable Information Drawer (Smoothly unfolds on hover) */}
+                <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-96 group-hover:opacity-100 transition-all duration-300 ease-out">
+                  <div className="pt-2.5 mt-2 border-t border-slate-100">
+                    <p className="text-xs text-slate-600 leading-relaxed text-left">
+                      {founder.desc}
+                    </p>
+
+                    <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400">
+                      <span className="font-semibold text-navy/80 bg-slate-100 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
+                        {founder.tag || 'Executive'}
+                      </span>
+                      <span className="text-gold font-bold uppercase tracking-wider">
+                        Leadership
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Highlight on Hover */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-b-2xl" />
               </div>
-            </div>
-
-
-            <div className="p-6 sm:p-7">
-
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Supporting company operations, guest experience, and day-to-day coordination with a focus on trust, service quality, and creating comfortable experiences for every VRV customer.
-              </p>
-
-              <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2">
-
-                <BadgeCheck size={16} className="text-gold" />
-
-                <span className="text-xs font-bold text-navy uppercase tracking-wider">
-                  Operations &amp; Leadership
-                </span>
-
-              </div>
-
-            </div>
-          </div>
-
+            )
+          })}
         </div>
 
 
@@ -774,11 +805,10 @@ export default function About() {
 
       </section>
 
-
       {/* ===================== SECTION: THE VRV TEAM ===================== */}
       <section
         id="team"
-        className="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 relative"
+        className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-slate-200/80 relative"
       >
 
         {/* Subtle Background Glow */}
@@ -786,7 +816,7 @@ export default function About() {
 
 
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6 relative z-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6 relative z-10">
 
           <div>
 
@@ -795,12 +825,12 @@ export default function About() {
               <span>Meet Our Team</span>
             </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-navy tracking-tight">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-navy tracking-tight">
               Passionate Minds.{' '}
               <span className="text-gold">Purposeful Work.</span>
             </h2>
 
-            <p className="text-slate-600 text-sm sm:text-base mt-3 max-w-xl leading-relaxed">
+            <p className="text-slate-600 text-xs sm:text-sm mt-2 max-w-xl leading-relaxed">
               Bringing together visionary leadership, operational precision, and software innovation to deliver exceptional experiences.
             </p>
 
@@ -811,7 +841,7 @@ export default function About() {
           <div className="flex items-center gap-4 justify-between lg:justify-end">
 
             <span className="text-xs font-bold text-navy bg-navy/5 border border-navy/10 px-3.5 py-2 rounded-xl shadow-xs">
-              ✨ 9 Dedicated Professionals
+              ✨ {teamMembers.length} Dedicated Professionals
             </span>
 
             {/* Carousel Arrow Controls */}
@@ -820,17 +850,17 @@ export default function About() {
               <button
                 onClick={() => scrollContainer(teamScrollRef, 'left')}
                 aria-label="Previous team member"
-                className="w-10 h-10 rounded-2xl bg-white hover:bg-gold text-navy hover:text-white flex items-center justify-center transition-all duration-300 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-gold/20 active:scale-95"
+                className="w-9 h-9 rounded-xl bg-white hover:bg-gold text-navy hover:text-white flex items-center justify-center transition-all duration-300 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-gold/20 active:scale-95"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft size={18} />
               </button>
 
               <button
                 onClick={() => scrollContainer(teamScrollRef, 'right')}
                 aria-label="Next team member"
-                className="w-10 h-10 rounded-2xl bg-white hover:bg-gold text-navy hover:text-white flex items-center justify-center transition-all duration-300 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-gold/20 active:scale-95"
+                className="w-9 h-9 rounded-xl bg-white hover:bg-gold text-navy hover:text-white flex items-center justify-center transition-all duration-300 border border-slate-200 shadow-sm hover:shadow-lg hover:shadow-gold/20 active:scale-95"
               >
-                <ChevronRight size={20} />
+                <ChevronRight size={18} />
               </button>
 
             </div>
@@ -841,16 +871,15 @@ export default function About() {
         {/* Team Cards Container */}
         <div
           ref={teamScrollRef}
-          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory pb-6 sm:pb-0 scrollbar-none relative z-10"
+          className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-4 xl:gap-5 overflow-x-auto sm:overflow-visible snap-x snap-mandatory px-4 sm:px-0 pb-6 sm:pb-4 scrollbar-none relative z-10 items-start"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
           }}
         >
-
           {teamMembers.map((member, idx) => {
-
             const initials = member.name
+              .replace(/^(Mr|Mrs|Ms|Dr)\.?\s+/i, '')
               .split(' ')
               .map((n) => n[0])
               .join('')
@@ -858,150 +887,95 @@ export default function About() {
             return (
               <div
                 key={idx}
-                className="w-[85vw] max-w-[290px] sm:w-auto sm:max-w-none shrink-0 snap-center group relative bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-gold/50 shadow-sm hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 hover:-translate-y-2.5 flex flex-col justify-between"
+                className="w-[72vw] max-w-[240px] sm:w-auto sm:max-w-none shrink-0 snap-center group relative bg-white rounded-2xl border border-slate-200/90 shadow-sm transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-gold/25 hover:border-gold/80 hover:scale-105 hover:z-30 p-3.5 flex flex-col"
               >
+                {/* Top Glowing Gold Accent Line */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/30 via-gold to-gold/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl z-20" />
 
-                {/* Top Glowing Gold Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/40 via-gold to-gold/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
-
-
-                {/* Photo / Monogram Header */}
-                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-900">
-
+                {/* 1:1 Aspect Ratio Photo */}
+                <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-900">
                   {member.image ? (
                     <img
                       src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                      alt={`${member.name} - ${member.role}`}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                       onError={(e) => {
-                        e.currentTarget.style.display = 'none'
-
+                        e.currentTarget.classList.add('hidden')
                         if (e.currentTarget.nextElementSibling) {
-                          e.currentTarget.nextElementSibling.style.display = 'flex'
+                          e.currentTarget.nextElementSibling.classList.remove('hidden')
+                          e.currentTarget.nextElementSibling.classList.add('flex')
                         }
                       }}
                     />
                   ) : null}
 
-
                   {/* Monogram Avatar Fallback */}
                   <div
-                    className={`w-full h-full flex-col items-center justify-center bg-gradient-to-br from-[#0c1830] via-[#16274a] to-[#091326] p-6 text-center ${
-                      member.image ? 'hidden' : 'flex'
-                    }`}
+                    className={`w-full h-full flex-col items-center justify-center bg-gradient-to-br from-[#0c1830] via-[#16274a] to-[#091326] p-4 text-center ${member.image ? 'hidden' : 'flex'
+                      }`}
                   >
-
-                    <div className="relative mb-3">
-
-                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gold/30 via-navy-800 to-gold/10 border-2 border-gold/50 text-gold flex items-center justify-center text-2xl font-bold font-display shadow-lg shadow-gold/10 group-hover:scale-105 transition-transform duration-500">
+                    <div className="relative mb-2">
+                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gold/30 via-navy-800 to-gold/10 border border-gold/50 text-gold flex items-center justify-center text-xl font-bold font-display shadow-md shadow-gold/10 group-hover:scale-105 transition-transform duration-500">
                         {initials}
                       </div>
-
-                      <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-navy" />
-
+                      <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-navy" />
                     </div>
-
-                    <span className="text-[11px] font-bold text-slate-300 tracking-wide uppercase">
-                      VRV Team Member
+                    <span className="text-[10px] font-bold text-slate-300 tracking-wide uppercase">
+                      VRV Team
                     </span>
-
                   </div>
-
-
-                  {/* Gradient Overlay */}
-                  {member.image && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/30 to-transparent pointer-events-none" />
-                  )}
-
 
                   {/* Role Pill Badge */}
-                  <div className="absolute top-3.5 right-3.5 z-10">
-
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider bg-navy/85 backdrop-blur-md text-gold border border-gold/40 px-3 py-1 rounded-full shadow-md">
+                  <div className="absolute top-2.5 right-2.5 z-10">
+                    <span className="text-[9px] font-extrabold uppercase tracking-wider bg-navy/85 backdrop-blur-md text-gold border border-gold/40 px-2 py-0.5 rounded-full shadow-sm">
                       {member.role}
                     </span>
-
                   </div>
-
-
-                  {/* Name & Dept Overlay */}
-                  {member.image && (
-                    <div className="absolute bottom-4 left-4 right-4 pointer-events-none text-left z-10">
-
-                      <h3 className="font-display text-xl font-bold text-white leading-tight drop-shadow-sm group-hover:text-gold transition-colors">
-                        {member.name}
-                      </h3>
-
-                      <div className="flex items-center gap-2 mt-1">
-
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-
-                        <span className="text-xs font-semibold text-gold/90">
-                          {member.dept}
-                        </span>
-
-                      </div>
-
-                    </div>
-                  )}
-
                 </div>
 
+                {/* Smaller Card Info: Name & Role/Dept (Clearly visible, high contrast) */}
+                <div className="pt-3 pb-1 text-center">
+                  <h3 className="font-display text-base font-bold text-navy group-hover:text-gold transition-colors leading-tight">
+                    {member.name}
+                  </h3>
 
-                {/* Card Content Body */}
-                <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 bg-white">
+                  <div className="flex items-center justify-center gap-1.5 mt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shrink-0" />
+                    <span className="text-[11px] font-semibold text-gold/90">
+                      {member.dept}
+                    </span>
+                  </div>
 
-                  <div>
+                  <p className="text-[10px] text-slate-400 font-medium mt-0.5">
+                    VRV Core
+                  </p>
+                </div>
 
-                    {/* Name & Dept for Non-Photo Cards */}
-                    {!member.image && (
-                      <div className="mb-3">
-
-                        <h3 className="font-display text-xl font-bold text-navy group-hover:text-gold-dark transition-colors">
-                          {member.name}
-                        </h3>
-
-                        <div className="flex items-center gap-2 mt-1">
-
-                          <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-
-                          <span className="text-xs font-bold text-slate-500">
-                            {member.dept}
-                          </span>
-
-                        </div>
-
-                      </div>
-                    )}
-
-                    <p className="text-xs text-slate-600 leading-relaxed font-sans line-clamp-3">
+                {/* Expandable Information Drawer (Smoothly unfolds on hover) */}
+                <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-96 group-hover:opacity-100 transition-all duration-300 ease-out">
+                  <div className="pt-2.5 mt-2 border-t border-slate-100">
+                    <p className="text-xs text-slate-600 leading-relaxed font-sans line-clamp-3 text-left">
                       {member.desc}
                     </p>
 
-                  </div>
-
-
-                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
-
-                    <span className="font-semibold text-navy/70 bg-slate-100 px-2.5 py-1 rounded-md text-[10px] uppercase tracking-wider">
-                      {member.dept}
-                    </span>
-
-                    <div className="flex items-center gap-1 text-slate-400 font-medium">
-                      <Sparkles size={12} className="text-gold" />
-                      <span>VRV Team</span>
+                    <div className="pt-2.5 mt-3 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400">
+                      <span className="font-semibold text-navy/80 bg-slate-100/80 px-2 py-0.5 rounded text-[10px] uppercase tracking-wider">
+                        {member.dept}
+                      </span>
+                      <div className="flex items-center gap-1 text-gold font-medium text-[10px]">
+                        <Sparkles size={11} className="text-gold" />
+                        <span>VRV Team</span>
+                      </div>
                     </div>
-
                   </div>
-
                 </div>
 
+                {/* Bottom Highlight on Hover */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl" />
               </div>
             )
           })}
-
         </div>
-
 
         {/* Mobile Swipe Hint */}
         <div className="flex sm:hidden items-center justify-center gap-2 text-xs font-semibold text-slate-400 mt-4">
@@ -1013,7 +987,7 @@ export default function About() {
 
 
       {/* ===================== SECTION: QUOTE BANNER ===================== */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <section className="py-14 sm:py-1 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto mb-10">
 
         <div className="relative rounded-3xl bg-[#FFFDF5] border border-gold/40 p-8 sm:p-12 shadow-md overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
 
@@ -1060,7 +1034,7 @@ export default function About() {
 
 
       {/* ===================== SECTION: FINAL CTA BANNER ===================== */}
-      <section className="bg-navy py-16 px-4 sm:px-6 lg:px-8 text-white text-center">
+      {/* <section className="bg-navy py-16 px-4 sm:px-6 lg:px-8 text-white text-center">
 
         <div className="max-w-4xl mx-auto space-y-6">
 
@@ -1095,7 +1069,7 @@ export default function About() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
     </div>
   )

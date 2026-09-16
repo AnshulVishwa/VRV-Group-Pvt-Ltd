@@ -11,16 +11,16 @@ export default function PropertyFilters({ filters, setFilters, onApply, onClear 
   };
 
   return (
-    <aside className="h-fit min-w-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+    <aside className="h-fit min-w-0 rounded-xl border border-slate-200 bg-white p-4 xl:p-5 2xl:p-6 shadow-sm">
       <div className="flex items-center justify-between">
-        <h3 className="flex items-center gap-2 text-base font-bold text-navy">
+        <h3 className="flex items-center gap-2 text-base xl:text-lg 2xl:text-xl font-bold text-navy">
           <SlidersHorizontal size={18} className="text-gold" />
           Filter Properties
         </h3>
         <div className="flex items-center gap-3">
           <button
             onClick={onClear}
-            className="flex items-center gap-1 text-xs font-semibold text-gold hover:underline"
+            className="flex items-center gap-1 text-xs xl:text-sm font-semibold text-gold hover:underline"
           >
             <RotateCcw size={12} /> Reset
           </button>
@@ -34,15 +34,16 @@ export default function PropertyFilters({ filters, setFilters, onApply, onClear 
         </div>
       </div>
 
-      <div className={`${open ? "block" : "hidden"} lg:block mt-4 space-y-4`}>
+      <div className={`${open ? "block" : "hidden"} lg:block mt-4 xl:mt-5 space-y-4 xl:space-y-4.5`}>
         {/* Location Search */}
         <div>
-          <label className="mb-1.5 block text-xs font-bold text-slate-700">Location / Locality</label>
+          <label className="mb-1.5 block text-xs xl:text-[13px] 2xl:text-sm font-bold text-slate-700">Location / Locality</label>
           <div className="field">
             <input
               value={filters.location}
               onChange={(e) => updateFilter("location", e.target.value)}
               placeholder="e.g. Omaxe, Prem Mandir, Govind Nagar"
+              className="text-xs xl:text-sm"
             />
             <MapPin size={15} className="shrink-0 text-gold" />
           </div>
@@ -50,7 +51,7 @@ export default function PropertyFilters({ filters, setFilters, onApply, onClear 
 
         {/* Price Range */}
         <div>
-          <label className="mb-1.5 block text-xs font-bold text-slate-700">Price Range (₹)</label>
+          <label className="mb-1.5 block text-xs xl:text-[13px] 2xl:text-sm font-bold text-slate-700">Price Range (₹)</label>
           <div className="grid grid-cols-[minmax(0,1fr)_16px_minmax(0,1fr)] items-center gap-1.5">
             <input
               type="number"
@@ -58,7 +59,7 @@ export default function PropertyFilters({ filters, setFilters, onApply, onClear 
               value={filters.minPrice}
               onChange={(e) => updateFilter("minPrice", e.target.value)}
               placeholder="Min Price"
-              className="field w-full"
+              className="field w-full text-xs xl:text-sm"
             />
             <span className="text-center text-[10px] text-slate-400">to</span>
             <input
@@ -67,14 +68,14 @@ export default function PropertyFilters({ filters, setFilters, onApply, onClear 
               value={filters.maxPrice}
               onChange={(e) => updateFilter("maxPrice", e.target.value)}
               placeholder="Max Price"
-              className="field w-full"
+              className="field w-full text-xs xl:text-sm"
             />
           </div>
         </div>
 
         {/* BHK Select */}
         <div>
-          <label className="mb-1.5 block text-xs font-bold text-slate-700">BHK / Bedrooms</label>
+          <label className="mb-1.5 block text-xs xl:text-[13px] 2xl:text-sm font-bold text-slate-700">BHK / Bedrooms</label>
           <Select
             value={filters.bhk}
             onChange={(v) => updateFilter("bhk", v)}
@@ -91,7 +92,7 @@ export default function PropertyFilters({ filters, setFilters, onApply, onClear 
 
         {/* Property Type */}
         <div>
-          <label className="mb-1.5 block text-xs font-bold text-slate-700">Property Type</label>
+          <label className="mb-1.5 block text-xs xl:text-[13px] 2xl:text-sm font-bold text-slate-700">Property Type</label>
           <Select
             value={filters.type}
             onChange={(v) => updateFilter("type", v)}
@@ -104,7 +105,7 @@ export default function PropertyFilters({ filters, setFilters, onApply, onClear 
 
         {/* Furnishing */}
         <div>
-          <label className="mb-1.5 block text-xs font-bold text-slate-700">Furnishing</label>
+          <label className="mb-1.5 block text-xs xl:text-[13px] 2xl:text-sm font-bold text-slate-700">Furnishing</label>
           <Select
             value={filters.furnishing}
             onChange={(v) => updateFilter("furnishing", v)}
@@ -117,23 +118,23 @@ export default function PropertyFilters({ filters, setFilters, onApply, onClear 
 
         <button
           onClick={() => onApply(filters)}
-          className="mt-2 flex h-10 w-full items-center justify-center gap-2 rounded-md bg-navy text-xs font-bold text-white transition hover:bg-[#142143]"
+          className="mt-2 flex h-10 xl:h-11 w-full items-center justify-center gap-2 rounded-md bg-navy text-xs xl:text-sm font-bold text-white transition hover:bg-[#142143]"
         >
           <SlidersHorizontal size={14} /> Apply Filters
         </button>
 
         {/* Help Banner */}
-        <div className="mt-4 flex min-w-0 items-center gap-3 rounded-lg bg-[#fff8eb] p-3 border border-gold/20">
-          <div className="w-8 h-8 rounded-lg bg-gold/15 flex items-center justify-center text-gold shrink-0">
+        <div className="mt-4 flex min-w-0 items-center gap-3 rounded-lg bg-[#fff8eb] p-3 xl:p-3.5 border border-gold/20">
+          <div className="w-8 h-8 xl:w-9 xl:h-9 rounded-lg bg-gold/15 flex items-center justify-center text-gold shrink-0">
             <Sparkles size={16} />
           </div>
           <div className="min-w-0 flex-1">
-            <b className="block text-xs text-navy">Need Custom Advice?</b>
-            <span className="text-[10px] text-slate-600">Speak with our Vrindavan local team</span>
+            <b className="block text-xs xl:text-sm text-navy">Need Custom Advice?</b>
+            <span className="text-[10px] xl:text-xs text-slate-600">Speak with our Vrindavan local team</span>
           </div>
           <a
             href={`tel:${SITE_CONFIG.phone1}`}
-            className="shrink-0 rounded border border-gold/60 bg-white px-2.5 py-1.5 text-[10px] font-bold text-[#8d6500] hover:bg-gold hover:text-white transition"
+            className="shrink-0 rounded border border-gold/60 bg-white px-2.5 py-1.5 text-[10px] xl:text-xs font-bold text-[#8d6500] hover:bg-gold hover:text-white transition"
           >
             Call
           </a>

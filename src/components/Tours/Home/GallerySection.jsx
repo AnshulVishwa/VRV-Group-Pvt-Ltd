@@ -9,35 +9,34 @@ export default function GallerySection() {
       id: 1,
       title: "Yamuna Aarti at Vishram Ghat",
       subtitle: "Evening floating diyas and spiritual devotion",
-      src: "/images/hero_yamuna_ghat.jpg",
+      src: "/images/iternary_images/vishram_ghat_aarti.jpeg",
       className: "md:col-span-8 md:row-span-2 h-72 sm:h-96"
     },
-    {
-      id: 2,
-      title: "Ancient Carved Temple Pillars",
-      subtitle: "Ornate stone heritage of Braj Dham",
-      src: "/images/itinerary_archway.jpg",
-      className: "md:col-span-4 md:row-span-2 h-72 sm:h-96"
+    { id: 2,
+  title: "Gehvan Kund",
+  subtitle: "A sacred kund associated with the divine heritage of Braj",
+    src: "/images/iternary_images/gahvar-kund.webp",
+    className: "md:col-span-4 md:row-span-2 h-72 sm:h-96"
     },
     {
       id: 3,
-      title: "Vrindavan Heritage Streets",
-      subtitle: "Traditional saffron procession and holy lanes",
-      src: "/images/pkg_vrindavan.jpg",
-      className: "md:col-span-4 h-56 sm:h-64"
+    title: "Bhandir Van",
+    subtitle: "A sacred forest known for its spiritual heritage and divine pastimes",
+    src: "/images/iternary_images/bhandir_van.jpeg",
+    className: "md:col-span-4 h-56 sm:h-64"
     },
     {
       id: 4,
       title: "Radha Kund",
       subtitle: "Serene sacred waters and sandstone chhatris at twilight",
-      src: "/images/radha_kund.jpg",
+      src: "/images/iternary_images/radha_kund.jpeg",
       className: "md:col-span-8 h-56 sm:h-64"
     },
     {
       id: 5,
       title: "Radha Raman Temple",
       subtitle: "Sacred devotion and timeless spiritual heritage of Vrindavan",
-      src: "/images/radha_raman.jpg",
+      src: "/images/iternary_images/radha-raman-temple-vrindavan-2.webp",
       className: "md:col-span-12 h-64 sm:h-80"
     }
   ]
@@ -103,31 +102,31 @@ export default function GallerySection() {
       {selectedImage && (
         <div
           onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in cursor-pointer"
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 animate-fade-in cursor-pointer overflow-y-auto"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-4xl w-full bg-slate-950 rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+            className="relative max-w-4xl w-full bg-slate-950 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 shadow-2xl max-h-[90vh] overflow-y-auto my-auto"
           >
             {/* Close Button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 z-10 text-white bg-black/50 hover:bg-black/80 p-2 rounded-full backdrop-blur-md transition-colors cursor-pointer"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 text-white bg-black/50 hover:bg-black/80 p-2 rounded-full backdrop-blur-md transition-colors cursor-pointer"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Selected Image */}
             <img
               src={selectedImage.src}
               alt={selectedImage.title}
-              className="w-full max-h-[75vh] object-contain bg-black"
+              className="w-full max-h-[65vh] sm:max-h-[75vh] object-contain bg-black"
             />
 
             {/* Image Details */}
-            <div className="p-6 bg-slate-900 text-white flex items-center justify-between">
+            <div className="p-4 sm:p-6 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <h3 className="font-display text-xl font-bold text-amber-300">
+                <h3 className="font-display text-lg sm:text-xl font-bold text-amber-300">
                   {selectedImage.title}
                 </h3>
 
@@ -136,7 +135,7 @@ export default function GallerySection() {
                 </p>
               </div>
 
-              <span className="text-xs px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 font-bold border border-amber-400/30">
+              <span className="self-start sm:self-auto text-xs px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 font-bold border border-amber-400/30 whitespace-nowrap">
                 VRV Sanctuary
               </span>
             </div>
@@ -146,7 +145,3 @@ export default function GallerySection() {
     </section>
   )
 }
-
-
-
-

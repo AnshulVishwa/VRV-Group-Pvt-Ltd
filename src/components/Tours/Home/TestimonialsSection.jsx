@@ -25,10 +25,10 @@ export default function TestimonialsSection() {
       <div className="relative w-full overflow-hidden">
 
         {/* Left Fade Overlay */}
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#fbfbfe] to-transparent z-10" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-[#fbfbfe] to-transparent z-10" />
 
         {/* Right Fade Overlay */}
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#fbfbfe] to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-[#fbfbfe] to-transparent z-10" />
 
         {/* Marquee */}
         <div className="animate-marquee gap-6 py-4">
@@ -37,8 +37,9 @@ export default function TestimonialsSection() {
             <div
               key={`${item.id}-${idx}`}
               className="
-                w-[340px]
-                sm:w-[420px]
+                w-[285px]
+                sm:w-[380px]
+                md:w-[420px]
                 shrink-0
                 bg-white
                 rounded-3xl

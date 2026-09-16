@@ -1,7 +1,7 @@
 {
   "name": "VRV Group Car Rental",
   "short_name": "VRV Rental",
-  "description": "Self-Drive Car Rental Service in Mathura & Vrindavan",
+  "description": "Self-Drive Car Rental Service in Vrindavan & Mathuram",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",

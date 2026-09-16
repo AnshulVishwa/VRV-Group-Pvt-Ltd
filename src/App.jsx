@@ -8,7 +8,7 @@ import Home from './pages/Home/Home';
 import About from './pages/Home/About';
 import Contact from './pages/Home/Contact';
 
-// Tours Pages
+// Tours Pages - 
 import ToursHome from './pages/Tours/Home';
 import PackageDetails from './pages/Tours/PackageDetails';
 

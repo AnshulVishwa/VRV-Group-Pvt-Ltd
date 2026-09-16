@@ -13,10 +13,10 @@ export default function Home() {
       <Hero />
       <ServiceCards />
       <StatsStrip />
-      <ValueCards />
+      {/* <ValueCards /> */}
       <Testimonials />
       <FAQ />
-      <CommentSection />
+      {/* <CommentSection /> */}
     </>
   )
 }

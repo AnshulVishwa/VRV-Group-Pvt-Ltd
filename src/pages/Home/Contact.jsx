@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  MessageCircle, 
-  Send, 
-  CheckCircle2, 
-  Compass, 
-  Building2, 
-  Car, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  MessageCircle,
+  Send,
+  CheckCircle2,
+  Compass,
+  Building2,
+  Car,
   Sparkles,
   ArrowRight
 } from 'lucide-react'
 import { SITE_CONFIG } from '../../constants/siteConfig'
 import SEOHead from '../../components/common/SEOHead'
+import { ConnectivityCoordinatesTexture, ContactCompassArt } from '../../components/common/PageTextures'
 
 export default function Contact() {
   const [name, setName] = useState('')
@@ -53,9 +54,9 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 relative overflow-hidden">
       <SEOHead
-        title="Contact VRV Group | Mathura & Vrindavan Office"
+        title="Contact VRV Group | Vrindavan & Mathura Office"
         description="Get in touch with VRV Group at Flat 104, Krishna 2C, Omaxe Eternity, Vrindavan. Call +91 89505 13077 or WhatsApp for tours, real estate & self-drive car rentals."
       />
 
@@ -64,6 +65,9 @@ export default function Contact() {
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
           <div className="absolute -top-40 -left-40 w-96 h-96 bg-gold rounded-full blur-[120px]" />
           <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-600 rounded-full blur-[140px]" />
+        </div>
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <ConnectivityCoordinatesTexture className="absolute -top-10 -right-10 w-[600px] h-[340px]" opacity={0.10} />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-4">
@@ -82,7 +86,7 @@ export default function Contact() {
       {/* Main Content: Info & Form */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 pb-20 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
+
           {/* Left Column: Office Details */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200/80">
@@ -310,9 +314,21 @@ export default function Contact() {
               )}
             </div>
           </div>
-
         </div>
       </section>
+
+      {/* Ambient Glow Halo */}
+      <div
+        className="absolute -bottom-24 -left-24 w-[440px] h-[440px] rounded-full pointer-events-none -z-10"
+        style={{
+          background: 'radial-gradient(circle, rgba(238, 245, 252, 0.85) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Bottom-Left Contact Compass & Office Landmark Line-Art Watermark (FAQ Sister Style) */}
+      <div className="absolute bottom-0 left-0 w-[340px] sm:w-[420px] md:w-[480px] pointer-events-none select-none opacity-65">
+        <ContactCompassArt className="w-full h-auto" />
+      </div>
     </div>
   )
 }
